@@ -39,6 +39,8 @@
     //Don't forget to initialize our counter variables.
     count = 0;
     countdown = 1;
+    pScore = 0;
+    cScore = 0;
 }
 //Registered handler to change the player image on a swipe left.
 - (void)swipeLeftHandler
@@ -47,6 +49,7 @@
     if(count < 0){
         count = [imageNames count] - 1;
     }
+    playerChoice = count;
     [player1ImageView setImage:[UIImage imageNamed:[imageNames objectAtIndex:count]]];
 }
 //Registered handler to change the player image on a swipe right.
@@ -56,6 +59,7 @@
     if(count >= [imageNames count]){
         count = 0;
     }
+    playerChoice = count;
     [player1ImageView setImage:[UIImage imageNamed:[imageNames objectAtIndex:count]]];
 }
 
@@ -72,6 +76,9 @@
  2.  Using Grand Central Dispatch(GCD) to start an event on a seperate thread at a later point in time.
  */
 - (IBAction)startPressed:(id)sender {
+    //Disable the start button so another game won't get triggered.
+    [startButton setEnabled:NO];
+    //Start a countdown.
     countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
 }
 
@@ -80,8 +87,6 @@
 {
     if(countdown == 1){
         [startButton setTitle:@"ONE" forState:UIControlStateNormal];
-        //Disable the start button once the countdown begins.
-        [startButton setEnabled:NO];
     }else if(countdown == 2){
         [startButton setTitle:@"TWO" forState:UIControlStateNormal];
     }else if(countdown == 3){
@@ -93,9 +98,10 @@
         [countdownTimer invalidate];
         
         //Let's use GCD to delay our image display until after shoot.
+        int compChoice = arc4random() % 3;
         dispatch_time_t shootTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC));
         dispatch_after(shootTime,dispatch_get_main_queue(),^(void){
-            int compChoice = arc4random() % 3;
+            computerChoice = compChoice;
             [computerView setImage:[UIImage imageNamed:[imageNames objectAtIndex:compChoice]]];
             [computerView setHidden:NO];
         });
@@ -122,5 +128,40 @@
     [swipeLeft setEnabled:YES];
     //Hide the computer's choice again.
     [computerView setHidden:YES];
+    [self updateScore];
+}
+- (void)updateScore
+{
+    //A tie occured, dont change the scores.
+    if(playerChoice == computerChoice)
+        return;
+    
+    //Figure out who won, and update the score accordingly.
+    if(playerChoice == rock){
+        if(computerChoice == paper){
+            cScore++;
+            [compScore setText:[NSString stringWithFormat:@"%d", cScore]];
+        }else{
+            pScore++;
+            [playerScore setText:[NSString stringWithFormat:@"%d", pScore]];
+        }
+    }else if(playerChoice == paper){
+        if(computerChoice == scissors){
+            cScore++;
+            [compScore setText:[NSString stringWithFormat:@"%d", cScore]];
+        }else{
+            pScore++;
+            [playerScore setText:[NSString stringWithFormat:@"%d", pScore]];
+        }
+    }else{
+        if(computerChoice == rock){
+            cScore++;
+            [compScore setText:[NSString stringWithFormat:@"%d", cScore]];
+        }else{
+            pScore++;
+            [playerScore setText:[NSString stringWithFormat:@"%d", pScore]];
+        }
+        
+    }
 }
 @end
