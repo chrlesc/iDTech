@@ -17,7 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
     //Here we add an image using code instead of storyboard, it's really personal preference as to which method you use.
     computerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Paper"]];
     [computerView setFrame:CGRectMake(player1ImageView.frame.origin.x,computerLabel.frame.origin.y + computerLabel.frame.size.height,player1ImageView.frame.size.width,player1ImageView.frame.size.height)];

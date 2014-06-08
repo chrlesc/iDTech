@@ -21,6 +21,7 @@
 		E611C121193EA5DC00E3B594 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E611C103193EA5DC00E3B594 /* UIKit.framework */; };
 		E611C129193EA5DC00E3B594 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E611C127193EA5DC00E3B594 /* InfoPlist.strings */; };
 		E611C12B193EA5DC00E3B594 /* RockPaperScissorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E611C12A193EA5DC00E3B594 /* RockPaperScissorsTests.m */; };
+		E68D497619441C7E00DFC2B7 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E68D497519441C7E00DFC2B7 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		E611C126193EA5DC00E3B594 /* RockPaperScissorsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RockPaperScissorsTests-Info.plist"; sourceTree = "<group>"; };
 		E611C128193EA5DC00E3B594 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E611C12A193EA5DC00E3B594 /* RockPaperScissorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RockPaperScissorsTests.m; sourceTree = "<group>"; };
+		E68D497419441C7E00DFC2B7 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		E68D497519441C7E00DFC2B7 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				E611C10E193EA5DC00E3B594 /* AppDelegate.h */,
 				E611C10F193EA5DC00E3B594 /* AppDelegate.m */,
 				E611C111193EA5DC00E3B594 /* Main.storyboard */,
+				E68D497419441C7E00DFC2B7 /* SecondViewController.h */,
+				E68D497519441C7E00DFC2B7 /* SecondViewController.m */,
 				E611C114193EA5DC00E3B594 /* ViewController.h */,
 				E611C115193EA5DC00E3B594 /* ViewController.m */,
 				E611C117193EA5DC00E3B594 /* Images.xcassets */,
@@ -249,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E68D497619441C7E00DFC2B7 /* SecondViewController.m in Sources */,
 				E611C116193EA5DC00E3B594 /* ViewController.m in Sources */,
 				E611C110193EA5DC00E3B594 /* AppDelegate.m in Sources */,
 				E611C10C193EA5DC00E3B594 /* main.m in Sources */,
@@ -460,6 +466,7 @@
 				E611C130193EA5DC00E3B594 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E611C131193EA5DC00E3B594 /* Build configuration list for PBXNativeTarget "RockPaperScissorsTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +475,7 @@
 				E611C133193EA5DC00E3B594 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

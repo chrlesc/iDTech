@@ -93,7 +93,12 @@
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" none="YES" button="YES"/>
                         </accessibility>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kvJ-5S-TKH" appends="YES" id="WGF-Jj-PLT"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="X91-dV-Eit"/>
                     <connections>
                         <outlet property="compScore" destination="dGZ-4c-P7a" id="CNv-yC-iqf"/>
                         <outlet property="computerLabel" destination="wIJ-bI-vWR" id="e1K-2C-mMY"/>
@@ -103,6 +108,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="kvJ-5S-TKH"/>
             </objects>
         </scene>
     </scenes>
