@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6tT-Ud-x22">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="1EI-ud-lun">
+            <objects>
+                <tableViewController id="JgZ-qv-8yH" customClass="TableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="uGb-Wa-roH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="64" id="jAx-2d-24D" customClass="UserCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jAx-2d-24D" id="pBK-s2-dSB">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDs-OM-SEN">
+                                            <rect key="frame" x="20" y="7" width="79" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfo-Kf-5yJ">
+                                            <rect key="frame" x="20" y="36" width="26" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UDs-OM-SEN" firstAttribute="top" secondItem="pBK-s2-dSB" secondAttribute="top" constant="7" id="Tnm-Ux-bGA"/>
+                                        <constraint firstItem="Lfo-Kf-5yJ" firstAttribute="leading" secondItem="pBK-s2-dSB" secondAttribute="leading" constant="20" id="a7Z-R2-L65"/>
+                                        <constraint firstItem="Lfo-Kf-5yJ" firstAttribute="top" secondItem="UDs-OM-SEN" secondAttribute="bottom" constant="8" id="bKN-Ts-rEt"/>
+                                        <constraint firstItem="UDs-OM-SEN" firstAttribute="leading" secondItem="pBK-s2-dSB" secondAttribute="leading" constant="20" id="kAU-Us-Ic6"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="petLabel" destination="Lfo-Kf-5yJ" id="XAN-am-gns"/>
+                                    <outlet property="usernameLabel" destination="UDs-OM-SEN" id="NzP-Zg-5ad"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JgZ-qv-8yH" id="h0h-MN-vmH"/>
+                            <outlet property="delegate" destination="JgZ-qv-8yH" id="dBa-KY-GH2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hnp-yt-nsr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uaq-sw-RDk">
+                            <connections>
+                                <action selector="addUser:" destination="JgZ-qv-8yH" id="RRk-xf-B8h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgE-wj-nB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="-184"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vF3-sQ-cEm">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="6tT-Ud-x22" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dmB-Hh-nm1">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JgZ-qv-8yH" kind="relationship" relationship="rootViewController" id="B5M-NL-Vdm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCN-8b-wfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="59" y="-184"/>
+        </scene>
+        <!--Detailed View Controller-->
+        <scene sceneID="VeK-dp-Q5t">
+            <objects>
+                <viewController storyboardIdentifier="detailedViewController" id="fgX-2K-Jd0" customClass="detailedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7VI-ed-ePV"/>
+                        <viewControllerLayoutGuide type="bottom" id="9LH-ym-6kw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y6l-Mt-Jvi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvC-3h-dyB">
+                                <rect key="frame" x="137" y="67" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kZ-g1-BFR">
+                                <rect key="frame" x="20" y="274" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa2-ZH-vRQ">
+                                <rect key="frame" x="114" y="274" width="26" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fa2-ZH-vRQ" firstAttribute="centerY" secondItem="2kZ-g1-BFR" secondAttribute="centerY" id="7NK-Un-quO"/>
+                            <constraint firstItem="Fa2-ZH-vRQ" firstAttribute="leading" secondItem="2kZ-g1-BFR" secondAttribute="trailing" constant="8" id="NHx-sQ-5U8"/>
+                            <constraint firstItem="2kZ-g1-BFR" firstAttribute="leading" secondItem="Y6l-Mt-Jvi" secondAttribute="leading" constant="20" id="PIe-IZ-JL5"/>
+                            <constraint firstItem="RvC-3h-dyB" firstAttribute="top" secondItem="7VI-ed-ePV" secondAttribute="bottom" constant="47" id="VBc-U4-OR2"/>
+                            <constraint firstAttribute="centerY" secondItem="2kZ-g1-BFR" secondAttribute="centerY" id="esz-Bw-24v"/>
+                            <constraint firstAttribute="centerX" secondItem="RvC-3h-dyB" secondAttribute="centerX" id="tZ3-Tz-Vpu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="RvC-3h-dyB" id="JtO-x3-tMC"/>
+                        <outlet property="petLabel" destination="Fa2-ZH-vRQ" id="6N0-OM-QWq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cx3-6s-E0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="-184"/>
+        </scene>
+        <!--Enter Data View Controller - Add User-->
+        <scene sceneID="qWD-K6-dBg">
+            <objects>
+                <viewController storyboardIdentifier="enterDataViewController" id="pgQ-Nm-0Fi" customClass="enterDataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q2l-eX-LGa"/>
+                        <viewControllerLayoutGuide type="bottom" id="6hM-5B-ukC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bMC-Xo-u8A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kf7-Ry-ciG">
+                                <rect key="frame" x="78" y="124" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pet's Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZe-wL-yph">
+                                <rect key="frame" x="78" y="184" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add User" id="Fx7-1d-t4k">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="SSp-0Y-bGH">
+                            <connections>
+                                <action selector="done:" destination="pgQ-Nm-0Fi" id="cU7-kR-6uR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="nameField" destination="kf7-Ry-ciG" id="Kqo-LI-R1e"/>
+                        <outlet property="petNameField" destination="FZe-wL-yph" id="a1T-w2-gCH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LFA-jR-tKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1233" y="-181"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
