@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>845354C7-9B52-44BE-B357-E77FD67E0A73</string>
+	<string>33C93A71-4F76-42AD-9914-2E71EF4537A9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>RockPaperScissors</string>
+	<string>PostToTwitter</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</key>
 		<string>https://github.com/chrlesc/iDTech.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RockPaperScissors/RockPaperScissors.xcodeproj/project.xcworkspace</string>
+	<string>PostToTwitter/PostToTwitter.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</key>
