@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6720CC54-1399-4753-BC76-82571F2348C0</string>
+	<string>BCC05839-454E-4DD3-9452-8B2A1554A911</string>
 	<key>IDESourceControlProjectName</key>
-	<string>RockPaperScissors</string>
+	<string>OpenGLGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</key>
 		<string>https://github.com/chrlesc/iDTech.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RockPaperScissors/RockPaperScissors.xcodeproj/project.xcworkspace</string>
+	<string>OpenGLGame/OpenGLGame.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</key>
