@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E6AA09921948FEFA000463AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AA09911948FEFA000463AF /* Foundation.framework */; };
+		E6AA09941948FEFA000463AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AA09931948FEFA000463AF /* CoreGraphics.framework */; };
+		E6AA09961948FEFA000463AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AA09951948FEFA000463AF /* UIKit.framework */; };
+		E6AA09981948FEFA000463AF /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AA09971948FEFA000463AF /* SpriteKit.framework */; };
+		E6AA099E1948FEFA000463AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6AA099C1948FEFA000463AF /* InfoPlist.strings */; };
+		E6AA09A01948FEFA000463AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA099F1948FEFA000463AF /* main.m */; };
+		E6AA09A41948FEFA000463AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA09A31948FEFA000463AF /* AppDelegate.m */; };
+		E6AA09A71948FEFA000463AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6AA09A51948FEFA000463AF /* Main.storyboard */; };
+		E6AA09AA1948FEFA000463AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA09A91948FEFA000463AF /* ViewController.m */; };
+		E6AA09B11948FEFA000463AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6AA09B01948FEFA000463AF /* Images.xcassets */; };
+		E6AA09B81948FEFA000463AF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AA09B71948FEFA000463AF /* XCTest.framework */; };
+		E6AA09B91948FEFA000463AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AA09911948FEFA000463AF /* Foundation.framework */; };
+		E6AA09BA1948FEFA000463AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AA09951948FEFA000463AF /* UIKit.framework */; };
+		E6AA09C21948FEFA000463AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6AA09C01948FEFA000463AF /* InfoPlist.strings */; };
+		E6AA09C41948FEFA000463AF /* SkyFallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA09C31948FEFA000463AF /* SkyFallTests.m */; };
+		E6AA09CF19490015000463AF /* WelcomeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA09CE19490015000463AF /* WelcomeScene.m */; };
+		E6AA09D219490020000463AF /* ArcheryScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA09D119490020000463AF /* ArcheryScene.m */; };
+		E6AA09D419497358000463AF /* archer.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E6AA09D319497358000463AF /* archer.atlas */; };
+		E6AA09D619497705000463AF /* ArrowTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AA09D519497705000463AF /* ArrowTexture.png */; };
+		E6AA09D819497716000463AF /* ArrowHitTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AA09D719497716000463AF /* ArrowHitTexture.png */; };
+		E6AA09DC19497725000463AF /* ballburst.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6AA09D919497725000463AF /* ballburst.mp3 */; };
+		E6AA09DD19497725000463AF /* BallFragment.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AA09DA19497725000463AF /* BallFragment.png */; };
+		E6AA09DE19497725000463AF /* BallTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AA09DB19497725000463AF /* BallTexture.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6AA09BB1948FEFA000463AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6AA09861948FEFA000463AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6AA098D1948FEFA000463AF;
+			remoteInfo = SkyFall;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E6AA098E1948FEFA000463AF /* SkyFall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyFall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6AA09911948FEFA000463AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E6AA09931948FEFA000463AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E6AA09951948FEFA000463AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E6AA09971948FEFA000463AF /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		E6AA099B1948FEFA000463AF /* SkyFall-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkyFall-Info.plist"; sourceTree = "<group>"; };
+		E6AA099D1948FEFA000463AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E6AA099F1948FEFA000463AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E6AA09A11948FEFA000463AF /* SkyFall-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkyFall-Prefix.pch"; sourceTree = "<group>"; };
+		E6AA09A21948FEFA000463AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E6AA09A31948FEFA000463AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E6AA09A61948FEFA000463AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E6AA09A81948FEFA000463AF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E6AA09A91948FEFA000463AF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E6AA09B01948FEFA000463AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E6AA09B61948FEFA000463AF /* SkyFallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyFallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6AA09B71948FEFA000463AF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E6AA09BF1948FEFA000463AF /* SkyFallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkyFallTests-Info.plist"; sourceTree = "<group>"; };
+		E6AA09C11948FEFA000463AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E6AA09C31948FEFA000463AF /* SkyFallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyFallTests.m; sourceTree = "<group>"; };
+		E6AA09CD19490015000463AF /* WelcomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeScene.h; sourceTree = "<group>"; };
+		E6AA09CE19490015000463AF /* WelcomeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeScene.m; sourceTree = "<group>"; };
+		E6AA09D019490020000463AF /* ArcheryScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcheryScene.h; sourceTree = "<group>"; };
+		E6AA09D119490020000463AF /* ArcheryScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcheryScene.m; sourceTree = "<group>"; };
+		E6AA09D319497358000463AF /* archer.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = archer.atlas; sourceTree = "<group>"; };
+		E6AA09D519497705000463AF /* ArrowTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowTexture.png; sourceTree = "<group>"; };
+		E6AA09D719497716000463AF /* ArrowHitTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowHitTexture.png; sourceTree = "<group>"; };
+		E6AA09D919497725000463AF /* ballburst.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballburst.mp3; sourceTree = "<group>"; };
+		E6AA09DA19497725000463AF /* BallFragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BallFragment.png; sourceTree = "<group>"; };
+		E6AA09DB19497725000463AF /* BallTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BallTexture.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6AA098B1948FEFA000463AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6AA09941948FEFA000463AF /* CoreGraphics.framework in Frameworks */,
+				E6AA09961948FEFA000463AF /* UIKit.framework in Frameworks */,
+				E6AA09981948FEFA000463AF /* SpriteKit.framework in Frameworks */,
+				E6AA09921948FEFA000463AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6AA09B31948FEFA000463AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6AA09B81948FEFA000463AF /* XCTest.framework in Frameworks */,
+				E6AA09BA1948FEFA000463AF /* UIKit.framework in Frameworks */,
+				E6AA09B91948FEFA000463AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E6AA09851948FEFA000463AF = {
+			isa = PBXGroup;
+			children = (
+				E6AA09991948FEFA000463AF /* SkyFall */,
+				E6AA09BD1948FEFA000463AF /* SkyFallTests */,
+				E6AA09901948FEFA000463AF /* Frameworks */,
+				E6AA098F1948FEFA000463AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6AA098F1948FEFA000463AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA098E1948FEFA000463AF /* SkyFall.app */,
+				E6AA09B61948FEFA000463AF /* SkyFallTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6AA09901948FEFA000463AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA09911948FEFA000463AF /* Foundation.framework */,
+				E6AA09931948FEFA000463AF /* CoreGraphics.framework */,
+				E6AA09951948FEFA000463AF /* UIKit.framework */,
+				E6AA09971948FEFA000463AF /* SpriteKit.framework */,
+				E6AA09B71948FEFA000463AF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6AA09991948FEFA000463AF /* SkyFall */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA09A21948FEFA000463AF /* AppDelegate.h */,
+				E6AA09A31948FEFA000463AF /* AppDelegate.m */,
+				E6AA09A51948FEFA000463AF /* Main.storyboard */,
+				E6AA09A81948FEFA000463AF /* ViewController.h */,
+				E6AA09A91948FEFA000463AF /* ViewController.m */,
+				E6AA09CD19490015000463AF /* WelcomeScene.h */,
+				E6AA09CE19490015000463AF /* WelcomeScene.m */,
+				E6AA09D019490020000463AF /* ArcheryScene.h */,
+				E6AA09D119490020000463AF /* ArcheryScene.m */,
+				E6AA09B01948FEFA000463AF /* Images.xcassets */,
+				E6AA099A1948FEFA000463AF /* Supporting Files */,
+			);
+			path = SkyFall;
+			sourceTree = "<group>";
+		};
+		E6AA099A1948FEFA000463AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA09D919497725000463AF /* ballburst.mp3 */,
+				E6AA09DA19497725000463AF /* BallFragment.png */,
+				E6AA09DB19497725000463AF /* BallTexture.png */,
+				E6AA09D719497716000463AF /* ArrowHitTexture.png */,
+				E6AA09D519497705000463AF /* ArrowTexture.png */,
+				E6AA09D319497358000463AF /* archer.atlas */,
+				E6AA099B1948FEFA000463AF /* SkyFall-Info.plist */,
+				E6AA099C1948FEFA000463AF /* InfoPlist.strings */,
+				E6AA099F1948FEFA000463AF /* main.m */,
+				E6AA09A11948FEFA000463AF /* SkyFall-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6AA09BD1948FEFA000463AF /* SkyFallTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA09C31948FEFA000463AF /* SkyFallTests.m */,
+				E6AA09BE1948FEFA000463AF /* Supporting Files */,
+			);
+			path = SkyFallTests;
+			sourceTree = "<group>";
+		};
+		E6AA09BE1948FEFA000463AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA09BF1948FEFA000463AF /* SkyFallTests-Info.plist */,
+				E6AA09C01948FEFA000463AF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6AA098D1948FEFA000463AF /* SkyFall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6AA09C71948FEFA000463AF /* Build configuration list for PBXNativeTarget "SkyFall" */;
+			buildPhases = (
+				E6AA098A1948FEFA000463AF /* Sources */,
+				E6AA098B1948FEFA000463AF /* Frameworks */,
+				E6AA098C1948FEFA000463AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkyFall;
+			productName = SkyFall;
+			productReference = E6AA098E1948FEFA000463AF /* SkyFall.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E6AA09B51948FEFA000463AF /* SkyFallTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6AA09CA1948FEFA000463AF /* Build configuration list for PBXNativeTarget "SkyFallTests" */;
+			buildPhases = (
+				E6AA09B21948FEFA000463AF /* Sources */,
+				E6AA09B31948FEFA000463AF /* Frameworks */,
+				E6AA09B41948FEFA000463AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6AA09BC1948FEFA000463AF /* PBXTargetDependency */,
+			);
+			name = SkyFallTests;
+			productName = SkyFallTests;
+			productReference = E6AA09B61948FEFA000463AF /* SkyFallTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6AA09861948FEFA000463AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "iD Tech";
+				TargetAttributes = {
+					E6AA09B51948FEFA000463AF = {
+						TestTargetID = E6AA098D1948FEFA000463AF;
+					};
+				};
+			};
+			buildConfigurationList = E6AA09891948FEFA000463AF /* Build configuration list for PBXProject "SkyFall" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E6AA09851948FEFA000463AF;
+			productRefGroup = E6AA098F1948FEFA000463AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6AA098D1948FEFA000463AF /* SkyFall */,
+				E6AA09B51948FEFA000463AF /* SkyFallTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6AA098C1948FEFA000463AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6AA09D419497358000463AF /* archer.atlas in Resources */,
+				E6AA099E1948FEFA000463AF /* InfoPlist.strings in Resources */,
+				E6AA09DD19497725000463AF /* BallFragment.png in Resources */,
+				E6AA09DC19497725000463AF /* ballburst.mp3 in Resources */,
+				E6AA09B11948FEFA000463AF /* Images.xcassets in Resources */,
+				E6AA09DE19497725000463AF /* BallTexture.png in Resources */,
+				E6AA09D819497716000463AF /* ArrowHitTexture.png in Resources */,
+				E6AA09D619497705000463AF /* ArrowTexture.png in Resources */,
+				E6AA09A71948FEFA000463AF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6AA09B41948FEFA000463AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6AA09C21948FEFA000463AF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6AA098A1948FEFA000463AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6AA09AA1948FEFA000463AF /* ViewController.m in Sources */,
+				E6AA09A41948FEFA000463AF /* AppDelegate.m in Sources */,
+				E6AA09D219490020000463AF /* ArcheryScene.m in Sources */,
+				E6AA09A01948FEFA000463AF /* main.m in Sources */,
+				E6AA09CF19490015000463AF /* WelcomeScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6AA09B21948FEFA000463AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6AA09C41948FEFA000463AF /* SkyFallTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6AA09BC1948FEFA000463AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6AA098D1948FEFA000463AF /* SkyFall */;
+			targetProxy = E6AA09BB1948FEFA000463AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E6AA099C1948FEFA000463AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6AA099D1948FEFA000463AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E6AA09A51948FEFA000463AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6AA09A61948FEFA000463AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E6AA09C01948FEFA000463AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6AA09C11948FEFA000463AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E6AA09C51948FEFA000463AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E6AA09C61948FEFA000463AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6AA09C81948FEFA000463AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkyFall/SkyFall-Prefix.pch";
+				INFOPLIST_FILE = "SkyFall/SkyFall-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E6AA09C91948FEFA000463AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkyFall/SkyFall-Prefix.pch";
+				INFOPLIST_FILE = "SkyFall/SkyFall-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E6AA09CB1948FEFA000463AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SkyFall.app/SkyFall";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkyFall/SkyFall-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SkyFallTests/SkyFallTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E6AA09CC1948FEFA000463AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SkyFall.app/SkyFall";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkyFall/SkyFall-Prefix.pch";
+				INFOPLIST_FILE = "SkyFallTests/SkyFallTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6AA09891948FEFA000463AF /* Build configuration list for PBXProject "SkyFall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6AA09C51948FEFA000463AF /* Debug */,
+				E6AA09C61948FEFA000463AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6AA09C71948FEFA000463AF /* Build configuration list for PBXNativeTarget "SkyFall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6AA09C81948FEFA000463AF /* Debug */,
+				E6AA09C91948FEFA000463AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E6AA09CA1948FEFA000463AF /* Build configuration list for PBXNativeTarget "SkyFallTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6AA09CB1948FEFA000463AF /* Debug */,
+				E6AA09CC1948FEFA000463AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6AA09861948FEFA000463AF /* Project object */;
+}
