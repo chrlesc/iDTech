@@ -7,15 +7,16 @@
 //
 
 #import "MyScene.h"
+#import "GameOver.h"
 
 @implementation MyScene
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        
+        self.scaleMode = SKSceneScaleModeAspectFill;
+
         //Create the DPad
         [self createDPad];
         
@@ -25,7 +26,18 @@
         [self.playerSprite setMVelocity:0];
         [self.playerSprite setRVelocity:0];
         [self.playerSprite setPosition: CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        
         [self addChild:self.playerSprite];
+        
+        NSString* emitterPath = [[NSBundle mainBundle]pathForResource:@"RocketFlame" ofType:@"sks"];
+        self.playerSprite.flameEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:emitterPath];
+        self.playerSprite.flameEmitter.position = CGPointMake(0, -150);
+        [self.playerSprite.flameEmitter setZPosition:-1];
+        [self.playerSprite.flameEmitter setScale:0];
+        self.playerSprite.flameEmitter.hidden = YES;
+        [self.playerSprite addChild:self.playerSprite.flameEmitter];
+        
+        self.gameOver = NO;
         
         //Instantiate the asteroid array.
         self.asteroids = [[NSMutableArray alloc]init];
@@ -41,14 +53,15 @@
     /* Called when a touch begins */
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-        
         if (CGRectContainsPoint(self.upButtonSprite.frame, location)) {
             [self.playerSprite setMVelocity:1];
-            [self playSound:@"Thrusters"];
+            [self playSound:@"Thrusters" type:@"mp3"];
+            self.playerSprite.flameEmitter.hidden = NO;
+            SKAction *growFlame = [SKAction scaleTo:2.0 duration:0.5];
+            [self.playerSprite.flameEmitter runAction:growFlame];
         }
         if (CGRectContainsPoint(self.downButtonSprite.frame, location)) {
             [self.playerSprite setMVelocity:-1];
-            [self playSound:@"Thrusters"];
         }
         if (CGRectContainsPoint(self.leftButtonSprite.frame, location)) {
             [self.playerSprite setRVelocity:1];
@@ -89,6 +102,8 @@
         if (CGRectContainsPoint(self.upButtonSprite.frame, location) ||
             CGRectContainsPoint(self.downButtonSprite.frame, location)){
             [self.playerSprite setMVelocity:0];
+            [self.playerSprite.flameEmitter setScale:0.0];
+            self.playerSprite.flameEmitter.hidden = YES;
         }
         if (CGRectContainsPoint(self.leftButtonSprite.frame, location) ||
             CGRectContainsPoint(self.rightButtonSprite.frame, location)){
@@ -164,24 +179,26 @@
 }
 
 -(void)checkCollisions {
+    //Without a check like this every frame a collision will fire for which the ship is in contact with the asteroid.
+    if(self.gameOver)
+        return;
+    
     for (Asteroid *asteroid in self.asteroids) {
         if (CGRectIntersectsRect(asteroid.frame, self.playerSprite.frame)) {
-            [self playSound:@"Explosion"];
-            
+            self.gameOver = YES;
+            [self playSound:@"Explosion" type:@"wav"];
             [self removeAllChildren];
             [timer invalidate];
             
-            SKLabelNode *youLoseLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-            [youLoseLabel setText:@"You lose :("];
-            [youLoseLabel setPosition:CGPointMake(CGRectGetMidX(self.frame),
-                                                  CGRectGetMidY(self.frame))];
-            [self addChild:youLoseLabel];
+            SKScene *gameOverScreen = [[GameOver alloc] initWithSize:self.size];
+            SKTransition *sceneTrans = [SKTransition moveInWithDirection:SKTransitionDirectionUp duration:1.0];
+            [self.view presentScene:gameOverScreen transition:sceneTrans];
         }
     }
 }
 
-- (void)playSound:(NSString *)fileName{
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"mp3"];
+- (void)playSound:(NSString *)fileName type:(NSString*)fileType{
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];
     SystemSoundID soundID;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath],
                                      &soundID);

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E63F4111194BA720003BCCCF /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = E63F4110194BA720003BCCCF /* Explosion.wav */; };
+		E65013C0194A8A15009757BD /* RocketFlame.sks in Resources */ = {isa = PBXBuildFile; fileRef = E65013BE194A8A15009757BD /* RocketFlame.sks */; };
+		E65013C1194A8A15009757BD /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E65013BF194A8A15009757BD /* spark.png */; };
 		E6521E511946489B00876814 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6521E501946489B00876814 /* Foundation.framework */; };
 		E6521E531946489B00876814 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6521E521946489B00876814 /* CoreGraphics.framework */; };
 		E6521E551946489B00876814 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6521E541946489B00876814 /* UIKit.framework */; };
@@ -26,7 +29,7 @@
 		E6521E831946489B00876814 /* AsteroidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6521E821946489B00876814 /* AsteroidsTests.m */; };
 		E6521E8E19465BEF00876814 /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E6521E8D19465BEF00876814 /* Spaceship.m */; };
 		E6521E911946A8C400876814 /* Asteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = E6521E901946A8C400876814 /* Asteroid.m */; };
-		E6AA093A1948E95E000463AF /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6AA09391948E95E000463AF /* Explosion.mp3 */; };
+		E6632279194BCD5E005F36C4 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = E6632278194BCD5E005F36C4 /* GameOver.m */; };
 		E6AA093C1948EAC8000463AF /* Thrusters.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6AA093B1948EAC8000463AF /* Thrusters.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E63F4110194BA720003BCCCF /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = "<group>"; };
+		E65013BE194A8A15009757BD /* RocketFlame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RocketFlame.sks; sourceTree = "<group>"; };
+		E65013BF194A8A15009757BD /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		E6521E4D1946489B00876814 /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6521E501946489B00876814 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6521E521946489B00876814 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,7 +74,8 @@
 		E6521E8D19465BEF00876814 /* Spaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spaceship.m; sourceTree = "<group>"; };
 		E6521E8F1946A8C400876814 /* Asteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asteroid.h; sourceTree = "<group>"; };
 		E6521E901946A8C400876814 /* Asteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Asteroid.m; sourceTree = "<group>"; };
-		E6AA09391948E95E000463AF /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
+		E6632277194BCD5E005F36C4 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
+		E6632278194BCD5E005F36C4 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
 		E6AA093B1948EAC8000463AF /* Thrusters.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Thrusters.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,9 +145,13 @@
 				E6521E681946489B00876814 /* ViewController.m */,
 				E6521E6A1946489B00876814 /* MyScene.h */,
 				E6521E6B1946489B00876814 /* MyScene.m */,
+				E6632277194BCD5E005F36C4 /* GameOver.h */,
+				E6632278194BCD5E005F36C4 /* GameOver.m */,
 				E6521E8F1946A8C400876814 /* Asteroid.h */,
 				E6521E901946A8C400876814 /* Asteroid.m */,
 				E6521E8C19465BEF00876814 /* Spaceship.h */,
+				E65013BE194A8A15009757BD /* RocketFlame.sks */,
+				E65013BF194A8A15009757BD /* spark.png */,
 				E6521E8D19465BEF00876814 /* Spaceship.m */,
 				E6521E6D1946489B00876814 /* Spaceship.png */,
 				E6521E6F1946489B00876814 /* Images.xcassets */,
@@ -152,8 +163,8 @@
 		E6521E591946489B00876814 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E63F4110194BA720003BCCCF /* Explosion.wav */,
 				E6AA093B1948EAC8000463AF /* Thrusters.mp3 */,
-				E6AA09391948E95E000463AF /* Explosion.mp3 */,
 				E6521E5A1946489B00876814 /* Asteroids-Info.plist */,
 				E6521E5B1946489B00876814 /* InfoPlist.strings */,
 				E6521E5E1946489B00876814 /* main.m */,
@@ -257,10 +268,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6521E5D1946489B00876814 /* InfoPlist.strings in Resources */,
+				E65013C0194A8A15009757BD /* RocketFlame.sks in Resources */,
+				E63F4111194BA720003BCCCF /* Explosion.wav in Resources */,
 				E6521E701946489B00876814 /* Images.xcassets in Resources */,
 				E6521E6E1946489B00876814 /* Spaceship.png in Resources */,
 				E6AA093C1948EAC8000463AF /* Thrusters.mp3 in Resources */,
-				E6AA093A1948E95E000463AF /* Explosion.mp3 in Resources */,
+				E65013C1194A8A15009757BD /* spark.png in Resources */,
 				E6521E661946489B00876814 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +296,7 @@
 				E6521E6C1946489B00876814 /* MyScene.m in Sources */,
 				E6521E8E19465BEF00876814 /* Spaceship.m in Sources */,
 				E6521E691946489B00876814 /* ViewController.m in Sources */,
+				E6632279194BCD5E005F36C4 /* GameOver.m in Sources */,
 				E6521E631946489B00876814 /* AppDelegate.m in Sources */,
 				E6521E911946A8C400876814 /* Asteroid.m in Sources */,
 				E6521E5F1946489B00876814 /* main.m in Sources */,

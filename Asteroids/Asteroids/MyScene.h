@@ -20,8 +20,9 @@
 @property (nonatomic, strong) SKSpriteNode *rightButtonSprite;
 @property (nonatomic, strong) Spaceship *playerSprite;
 @property (nonatomic, strong) NSMutableArray *asteroids;
+@property (atomic, assign) BOOL gameOver;
 - (void)createDPad;
 - (void)checkCollisions;
 - (void)spawnAsteroid;
-- (void)playSound:(NSString *)fileName;
+- (void)playSound:(NSString *)fileName type:(NSString*)fileType;
 @end

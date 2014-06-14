@@ -11,4 +11,5 @@
 @interface Spaceship : SKSpriteNode
 @property (nonatomic, assign) float MVelocity;
 @property (nonatomic, assign) float RVelocity;
+@property (nonatomic, strong) SKEmitterNode *flameEmitter;
 @end
