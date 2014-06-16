@@ -9,16 +9,31 @@
 #import "MyScene.h"
 #import "GameOver.h"
 
+#define MAX_VELOCITY 25.0
+
 @implementation MyScene
+
+
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
+        rocketCategory = 0x1 << 0;
+        asteroidCategory = 0x1 << 1;
+        wallCategory = 0x1 << 3;
+        
         /* Setup your scene here */
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         self.scaleMode = SKSceneScaleModeAspectFill;
+        self.physicsWorld.contactDelegate = self;
 
         //Create the DPad
         [self createDPad];
+        
+        //Let's keeep our spaceship within the bounds of the screen!
+        SKPhysicsBody* borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        self.physicsBody = borderBody;
+        self.physicsBody.friction = 0.0f;
+        self.physicsBody.categoryBitMask = wallCategory;
         
         //Set up the player spaceship sprite.
         self.playerSprite = [Spaceship spriteNodeWithImageNamed:@"Spaceship"];
@@ -26,14 +41,30 @@
         [self.playerSprite setMVelocity:0];
         [self.playerSprite setRVelocity:0];
         [self.playerSprite setPosition: CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        [self.playerSprite setName:@"playerSprite"];
         
+        [self.playerSprite setPhysicsBody:[SKPhysicsBody bodyWithCircleOfRadius:self.playerSprite.frame.size.width/2.3]];
+        [self.playerSprite.physicsBody setLinearDamping:1.0];
+        [self.playerSprite.physicsBody setUsesPreciseCollisionDetection:YES];
+        [self.playerSprite.physicsBody setAllowsRotation:NO];
+        [self.playerSprite.physicsBody setDynamic:YES];
+        
+        self.playerSprite.physicsBody.categoryBitMask = rocketCategory;
+        self.playerSprite.physicsBody.collisionBitMask = wallCategory;
+        self.playerSprite.physicsBody.contactTestBitMask = asteroidCategory;
         [self addChild:self.playerSprite];
+        
+        self.currentDirection = none;
+        
+        [self.physicsWorld setGravity:CGVectorMake(0.0, 0.0)];
+        
+        
         
         NSString* emitterPath = [[NSBundle mainBundle]pathForResource:@"RocketFlame" ofType:@"sks"];
         self.playerSprite.flameEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:emitterPath];
         self.playerSprite.flameEmitter.position = CGPointMake(0, -150);
         [self.playerSprite.flameEmitter setZPosition:-1];
-        [self.playerSprite.flameEmitter setScale:0];
+        [self.playerSprite.flameEmitter setScale:2.0];
         self.playerSprite.flameEmitter.hidden = YES;
         [self.playerSprite addChild:self.playerSprite.flameEmitter];
         
@@ -49,44 +80,49 @@
     return self;
 }
 
+-(void)didEvaluateActions{
+   //Give the spaceship a maximum velocity so it doesn't accelerate crazy.
+   double cur_velocity = sqrt(pow(self.playerSprite.physicsBody.velocity.dy,2)+pow(self.playerSprite.physicsBody.velocity.dx,2));
+    float vDir = atan2(self.playerSprite.physicsBody.velocity.dy,self.playerSprite.physicsBody.velocity.dx);
+    if(cur_velocity > MAX_VELOCITY){
+        [self.playerSprite.physicsBody setVelocity:CGVectorMake(cos(vDir)*MAX_VELOCITY, sin(vDir)*MAX_VELOCITY)];
+    }
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
         if (CGRectContainsPoint(self.upButtonSprite.frame, location)) {
-            [self.playerSprite setMVelocity:1];
+            self.currentDirection = up;
             [self playSound:@"Thrusters" type:@"mp3"];
             self.playerSprite.flameEmitter.hidden = NO;
-            SKAction *growFlame = [SKAction scaleTo:2.0 duration:0.5];
-            [self.playerSprite.flameEmitter runAction:growFlame];
         }
         if (CGRectContainsPoint(self.downButtonSprite.frame, location)) {
-            [self.playerSprite setMVelocity:-1];
+            self.currentDirection = down;
         }
         if (CGRectContainsPoint(self.leftButtonSprite.frame, location)) {
-            [self.playerSprite setRVelocity:1];
+            self.currentDirection = left;
         }
         if (CGRectContainsPoint(self.rightButtonSprite.frame, location)) {
-            [self.playerSprite setRVelocity:-1];
+            self.currentDirection = right;
         }
     }
 }
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.playerSprite setMVelocity:0];
-    [self.playerSprite setRVelocity:0];
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
         if (CGRectContainsPoint(self.upButtonSprite.frame, location)) {
-            [self.playerSprite setMVelocity:1];
+            self.currentDirection = up;
         }
         else if (CGRectContainsPoint(self.downButtonSprite.frame, location)) {
-            [self.playerSprite setMVelocity:-1];
+            self.currentDirection = down;
         }
         else if (CGRectContainsPoint(self.leftButtonSprite.frame, location)) {
-            [self.playerSprite setRVelocity:1];
+            self.currentDirection = left;
         }
         else if (CGRectContainsPoint(self.rightButtonSprite.frame, location)) {
-            [self.playerSprite setRVelocity:-1];
+            self.currentDirection = right;
         }
     }
 }
@@ -94,47 +130,34 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     NSSet *allTouches = [event allTouches];
     if (allTouches.count - touches.count == 0) {
-        [self.playerSprite setMVelocity:0];
-        [self.playerSprite setRVelocity:0];
+        self.currentDirection = none;
     }
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
         if (CGRectContainsPoint(self.upButtonSprite.frame, location) ||
             CGRectContainsPoint(self.downButtonSprite.frame, location)){
-            [self.playerSprite setMVelocity:0];
-            [self.playerSprite.flameEmitter setScale:0.0];
+            //Why is it a good idea to make this hidden when not seen?  Look at your node count!!!
             self.playerSprite.flameEmitter.hidden = YES;
         }
         if (CGRectContainsPoint(self.leftButtonSprite.frame, location) ||
             CGRectContainsPoint(self.rightButtonSprite.frame, location)){
-            [self.playerSprite setRVelocity:0];
         }
     }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     //Determine the amount to spin.
-    [self.playerSprite setZRotation:self.playerSprite.zRotation+M_PI*(2.0/180.0)*self.playerSprite.RVelocity];
     //Calculate the delta_x and delta_y based on angle of ship.
-    float delta_x = sin(-self.playerSprite.zRotation)*self.playerSprite.MVelocity;
-    float delta_y = cos(-self.playerSprite.zRotation)*self.playerSprite.MVelocity;
-    
-    [self.playerSprite setPosition:CGPointMake(self.playerSprite.position.x + delta_x,self.playerSprite.position.y + delta_y)];
-    
-    //Update each of the asteroids positions.
-    for(int i = 0; i < self.asteroids.count; i++){
-        Asteroid *asteroid = [self.asteroids objectAtIndex:i];
-        [asteroid setPosition:CGPointMake(asteroid.position.x,
-                                          asteroid.position.y + asteroid.YVelocity)];
-        //Probably a good idea to remove the asteroid once off screen too!
-        if(asteroid.position.y < -10){
-            [asteroid removeFromParent];
-            [self.asteroids removeObjectAtIndex:i];
-        }
+    float currentZ = self.playerSprite.zRotation;
+    if(self.currentDirection == up){
+        [self.playerSprite.physicsBody applyForce:CGVectorMake(sinf(currentZ)*-500.0, cosf(currentZ)*500.0)];
+    }else if(self.currentDirection == down){
+        [self.playerSprite.physicsBody applyForce:CGVectorMake(sinf(currentZ)*500.0, cosf(currentZ)*-500.0)];
+    }else if(self.currentDirection == left){
+        [self.playerSprite setZRotation:currentZ+M_PI*2.0/180.0];
+    }else if(self.currentDirection == right){
+        [self.playerSprite setZRotation:currentZ-M_PI*2.0/180.0];
     }
-    
-    //Check for collisions.
-    [self checkCollisions];
 }
 
 -(void)createDPad {
@@ -171,30 +194,42 @@
     [asteroid setPosition:CGPointMake(randomXStartingPosition, [UIScreen mainScreen].bounds.size.height+asteroid.size.height)];
     
     //Pick the velocity of the asteroid.
-    float randomY = -((arc4random() % 20)/10.0f);
+    float randomY = -((arc4random() % 20)/10.0f)-2.0;
     [asteroid setYVelocity:randomY];
+    [asteroid setPhysicsBody:[SKPhysicsBody bodyWithCircleOfRadius:self.playerSprite.frame.size.width/3.0]];
+    asteroid.physicsBody.usesPreciseCollisionDetection = YES;
+    asteroid.physicsBody.categoryBitMask = asteroidCategory;
+    [asteroid.physicsBody setCollisionBitMask:rocketCategory];
+    [asteroid.physicsBody setContactTestBitMask:0];
+    [asteroid.physicsBody setDynamic:YES];
+    
     
     [self.asteroids addObject:asteroid];
     [self addChild:asteroid];
+    
+    [asteroid.physicsBody applyImpulse:CGVectorMake(0.0, randomY)];
 }
 
--(void)checkCollisions {
-    //Without a check like this every frame a collision will fire for which the ship is in contact with the asteroid.
-    if(self.gameOver)
-        return;
+- (void) didBeginContact:(SKPhysicsContact *)contact{
+    SKSpriteNode *firstNode, *secondNode;
     
-    for (Asteroid *asteroid in self.asteroids) {
-        if (CGRectIntersectsRect(asteroid.frame, self.playerSprite.frame)) {
-            self.gameOver = YES;
-            [self playSound:@"Explosion" type:@"wav"];
-            [self removeAllChildren];
-            [timer invalidate];
-            
-            SKScene *gameOverScreen = [[GameOver alloc] initWithSize:self.size];
-            SKTransition *sceneTrans = [SKTransition moveInWithDirection:SKTransitionDirectionUp duration:1.0];
-            [self.view presentScene:gameOverScreen transition:sceneTrans];
-        }
+    firstNode = (SKSpriteNode *)contact.bodyA.node;
+    secondNode = (SKSpriteNode *) contact.bodyB.node;
+    
+    //If the rocket is involved in a contact, we want to know about it.
+    if (((contact.bodyA.categoryBitMask == rocketCategory)
+        || (contact.bodyB.categoryBitMask == rocketCategory)) && (contact.bodyB.categoryBitMask != wallCategory && contact.bodyA.categoryBitMask != wallCategory))
+    {
+        self.gameOver = YES;
+        [self playSound:@"Explosion" type:@"wav"];
+        [self removeAllChildren];
+        [timer invalidate];
+        
+        SKScene *gameOverScreen = [[GameOver alloc] initWithSize:self.size];
+        SKTransition *sceneTrans = [SKTransition moveInWithDirection:SKTransitionDirectionUp duration:1.0];
+        [self.view presentScene:gameOverScreen transition:sceneTrans];
     }
+
 }
 
 - (void)playSound:(NSString *)fileName type:(NSString*)fileType{
