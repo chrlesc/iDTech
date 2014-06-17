@@ -27,8 +27,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    UITabBar *tabBar = [self tabBar];
-    UITabBarItem *firstItem = [[tabBar items] objectAtIndex:0];
+   // UITabBar *tabBar = [self tabBar];
+    UITabBarItem *firstItem = [[self.tabBar items] objectAtIndex:0];
     UIEdgeInsets firstEdge = UIEdgeInsetsMake(5, 0, 0, 0);
     [firstItem setImageInsets:firstEdge];
     [firstItem setImage:[[UIImage imageNamed:@"Tree"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
