@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6F3C845F-DCF6-4E78-9E96-AC237C23F665</string>
+	<string>5139DE66-6664-4A1A-810C-BDF2C4BF2487</string>
 	<key>IDESourceControlProjectName</key>
-	<string>PostToTwitter</string>
+	<string>TabBarController</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</key>
 		<string>https://github.com/chrlesc/iDTech.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PostToTwitter/PostToTwitter.xcodeproj/project.xcworkspace</string>
+	<string>TabBarController/TabBarController.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</key>

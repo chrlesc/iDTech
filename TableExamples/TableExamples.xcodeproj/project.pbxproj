@@ -478,6 +478,7 @@
 				E68D4A4E19455B4700DFC2B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E68D4A4F19455B4700DFC2B7 /* Build configuration list for PBXNativeTarget "TableExamplesTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +487,7 @@
 				E68D4A5119455B4700DFC2B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
