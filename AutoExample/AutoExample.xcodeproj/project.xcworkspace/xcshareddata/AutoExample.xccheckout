@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8A5461CA-787D-4143-838B-C55104729E98</string>
+	<string>2E52C740-A177-4C49-839A-54B5817BA607</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TableExamples</string>
+	<string>AutoExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</key>
 		<string>https://github.com/chrlesc/iDTech.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TableExamples/TableExamples.xcodeproj/project.xcworkspace</string>
+	<string>AutoExample/AutoExample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</key>
