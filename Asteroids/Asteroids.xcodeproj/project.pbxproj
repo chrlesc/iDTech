@@ -31,6 +31,8 @@
 		E6521E911946A8C400876814 /* Asteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = E6521E901946A8C400876814 /* Asteroid.m */; };
 		E6632279194BCD5E005F36C4 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = E6632278194BCD5E005F36C4 /* GameOver.m */; };
 		E6AA093C1948EAC8000463AF /* Thrusters.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6AA093B1948EAC8000463AF /* Thrusters.mp3 */; };
+		E6C168B31953EF340018E18F /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C168B21953EF340018E18F /* Options.m */; };
+		E6C168B61953F0130018E18F /* Welcome.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C168B51953F0130018E18F /* Welcome.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,10 @@
 		E6632277194BCD5E005F36C4 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
 		E6632278194BCD5E005F36C4 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
 		E6AA093B1948EAC8000463AF /* Thrusters.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Thrusters.mp3; sourceTree = "<group>"; };
+		E6C168B11953EF340018E18F /* Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Options.h; sourceTree = "<group>"; };
+		E6C168B21953EF340018E18F /* Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Options.m; sourceTree = "<group>"; };
+		E6C168B41953F0130018E18F /* Welcome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Welcome.h; sourceTree = "<group>"; };
+		E6C168B51953F0130018E18F /* Welcome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Welcome.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +149,12 @@
 				E6521E641946489B00876814 /* Main.storyboard */,
 				E6521E671946489B00876814 /* ViewController.h */,
 				E6521E681946489B00876814 /* ViewController.m */,
+				E6C168B41953F0130018E18F /* Welcome.h */,
+				E6C168B51953F0130018E18F /* Welcome.m */,
 				E6521E6A1946489B00876814 /* MyScene.h */,
 				E6521E6B1946489B00876814 /* MyScene.m */,
+				E6C168B11953EF340018E18F /* Options.h */,
+				E6C168B21953EF340018E18F /* Options.m */,
 				E6632277194BCD5E005F36C4 /* GameOver.h */,
 				E6632278194BCD5E005F36C4 /* GameOver.m */,
 				E6521E8F1946A8C400876814 /* Asteroid.h */,
@@ -293,6 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6C168B61953F0130018E18F /* Welcome.m in Sources */,
+				E6C168B31953EF340018E18F /* Options.m in Sources */,
 				E6521E6C1946489B00876814 /* MyScene.m in Sources */,
 				E6521E8E19465BEF00876814 /* Spaceship.m in Sources */,
 				E6521E691946489B00876814 /* ViewController.m in Sources */,

@@ -9,7 +9,7 @@
 #import "GameOver.h"
 
 @implementation GameOver
--(void) didMoveToView:(SKView *)view{
+- (void) didMoveToView:(SKView *)view{
     if(~self.sceneCreated){
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         self.scaleMode = SKSceneScaleModeAspectFill;

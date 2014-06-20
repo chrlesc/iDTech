@@ -179,6 +179,7 @@
     [self.leftButtonSprite setZRotation:M_PI_2];
     [self.rightButtonSprite setZRotation:-M_PI_2];
     
+    //Add the sprites to the view.
     [self addChild:self.upButtonSprite];
     [self addChild:self.downButtonSprite];
     [self addChild:self.leftButtonSprite];
@@ -186,15 +187,18 @@
 }
 
 -(void)spawnAsteroid {
+    //Create a new Asteroid.
     Asteroid *asteroid = [Asteroid spriteNodeWithImageNamed:@"Asteroid"];
+    //Shrink the scale
     [asteroid setScale:0.25];
     
     //Pick a random x-position to start at, and determine the height to start at.
     float randomXStartingPosition = (arc4random() % 280) + 50;
     [asteroid setPosition:CGPointMake(randomXStartingPosition, [UIScreen mainScreen].bounds.size.height+asteroid.size.height)];
     
+    //Set the physics body properties.
     //Pick the velocity of the asteroid.
-    float randomY = -((arc4random() % 20)/10.0f)-2.0;
+    float randomY = -((arc4random() % 20)/10.0f)-4.0;
     [asteroid setYVelocity:randomY];
     [asteroid setPhysicsBody:[SKPhysicsBody bodyWithCircleOfRadius:self.playerSprite.frame.size.width/3.0]];
     asteroid.physicsBody.usesPreciseCollisionDetection = YES;
@@ -202,6 +206,7 @@
     [asteroid.physicsBody setCollisionBitMask:rocketCategory];
     [asteroid.physicsBody setContactTestBitMask:0];
     [asteroid.physicsBody setDynamic:YES];
+    [asteroid.physicsBody setLinearDamping:0.0];
     
     
     [self.asteroids addObject:asteroid];
