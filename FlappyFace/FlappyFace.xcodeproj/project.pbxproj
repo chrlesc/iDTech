@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E6C169571955B9460018E18F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C169561955B9460018E18F /* Foundation.framework */; };
+		E6C169591955B9460018E18F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C169581955B9460018E18F /* CoreGraphics.framework */; };
+		E6C1695B1955B9460018E18F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C1695A1955B9460018E18F /* UIKit.framework */; };
+		E6C1695D1955B9460018E18F /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C1695C1955B9460018E18F /* SpriteKit.framework */; };
+		E6C169631955B9460018E18F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6C169611955B9460018E18F /* InfoPlist.strings */; };
+		E6C169651955B9460018E18F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C169641955B9460018E18F /* main.m */; };
+		E6C169691955B9460018E18F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C169681955B9460018E18F /* AppDelegate.m */; };
+		E6C1696C1955B9460018E18F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C1696A1955B9460018E18F /* Main_iPhone.storyboard */; };
+		E6C1696F1955B9460018E18F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C1696D1955B9460018E18F /* Main_iPad.storyboard */; };
+		E6C169721955B9460018E18F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C169711955B9460018E18F /* ViewController.m */; };
+		E6C169751955B9460018E18F /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C169741955B9460018E18F /* MyScene.m */; };
+		E6C169771955B9460018E18F /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E6C169761955B9460018E18F /* Spaceship.png */; };
+		E6C169791955B9460018E18F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6C169781955B9460018E18F /* Images.xcassets */; };
+		E6C169801955B9470018E18F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C1697F1955B9470018E18F /* XCTest.framework */; };
+		E6C169811955B9470018E18F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C169561955B9460018E18F /* Foundation.framework */; };
+		E6C169821955B9470018E18F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C1695A1955B9460018E18F /* UIKit.framework */; };
+		E6C1698A1955B9470018E18F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6C169881955B9470018E18F /* InfoPlist.strings */; };
+		E6C1698C1955B9470018E18F /* FlappyFaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C1698B1955B9470018E18F /* FlappyFaceTests.m */; };
+		E6C169971955BD240018E18F /* FirstPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C169961955BD240018E18F /* FirstPictureViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6C169831955B9470018E18F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6C1694B1955B9460018E18F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6C169521955B9460018E18F;
+			remoteInfo = FlappyFace;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E6C169531955B9460018E18F /* FlappyFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6C169561955B9460018E18F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E6C169581955B9460018E18F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E6C1695A1955B9460018E18F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E6C1695C1955B9460018E18F /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		E6C169601955B9460018E18F /* FlappyFace-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlappyFace-Info.plist"; sourceTree = "<group>"; };
+		E6C169621955B9460018E18F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E6C169641955B9460018E18F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E6C169661955B9460018E18F /* FlappyFace-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlappyFace-Prefix.pch"; sourceTree = "<group>"; };
+		E6C169671955B9460018E18F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E6C169681955B9460018E18F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E6C1696B1955B9460018E18F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		E6C1696E1955B9460018E18F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		E6C169701955B9460018E18F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E6C169711955B9460018E18F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E6C169731955B9460018E18F /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		E6C169741955B9460018E18F /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		E6C169761955B9460018E18F /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		E6C169781955B9460018E18F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E6C1697E1955B9470018E18F /* FlappyFaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyFaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6C1697F1955B9470018E18F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E6C169871955B9470018E18F /* FlappyFaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlappyFaceTests-Info.plist"; sourceTree = "<group>"; };
+		E6C169891955B9470018E18F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E6C1698B1955B9470018E18F /* FlappyFaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlappyFaceTests.m; sourceTree = "<group>"; };
+		E6C169951955BD240018E18F /* FirstPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstPictureViewController.h; sourceTree = "<group>"; };
+		E6C169961955BD240018E18F /* FirstPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstPictureViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6C169501955B9460018E18F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C169591955B9460018E18F /* CoreGraphics.framework in Frameworks */,
+				E6C1695B1955B9460018E18F /* UIKit.framework in Frameworks */,
+				E6C1695D1955B9460018E18F /* SpriteKit.framework in Frameworks */,
+				E6C169571955B9460018E18F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6C1697B1955B9470018E18F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C169801955B9470018E18F /* XCTest.framework in Frameworks */,
+				E6C169821955B9470018E18F /* UIKit.framework in Frameworks */,
+				E6C169811955B9470018E18F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E6C1694A1955B9460018E18F = {
+			isa = PBXGroup;
+			children = (
+				E6C1695E1955B9460018E18F /* FlappyFace */,
+				E6C169851955B9470018E18F /* FlappyFaceTests */,
+				E6C169551955B9460018E18F /* Frameworks */,
+				E6C169541955B9460018E18F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6C169541955B9460018E18F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6C169531955B9460018E18F /* FlappyFace.app */,
+				E6C1697E1955B9470018E18F /* FlappyFaceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6C169551955B9460018E18F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6C169561955B9460018E18F /* Foundation.framework */,
+				E6C169581955B9460018E18F /* CoreGraphics.framework */,
+				E6C1695A1955B9460018E18F /* UIKit.framework */,
+				E6C1695C1955B9460018E18F /* SpriteKit.framework */,
+				E6C1697F1955B9470018E18F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6C1695E1955B9460018E18F /* FlappyFace */ = {
+			isa = PBXGroup;
+			children = (
+				E6C169671955B9460018E18F /* AppDelegate.h */,
+				E6C169681955B9460018E18F /* AppDelegate.m */,
+				E6C169951955BD240018E18F /* FirstPictureViewController.h */,
+				E6C169961955BD240018E18F /* FirstPictureViewController.m */,
+				E6C1696A1955B9460018E18F /* Main_iPhone.storyboard */,
+				E6C1696D1955B9460018E18F /* Main_iPad.storyboard */,
+				E6C169701955B9460018E18F /* ViewController.h */,
+				E6C169711955B9460018E18F /* ViewController.m */,
+				E6C169731955B9460018E18F /* MyScene.h */,
+				E6C169741955B9460018E18F /* MyScene.m */,
+				E6C169761955B9460018E18F /* Spaceship.png */,
+				E6C169781955B9460018E18F /* Images.xcassets */,
+				E6C1695F1955B9460018E18F /* Supporting Files */,
+			);
+			path = FlappyFace;
+			sourceTree = "<group>";
+		};
+		E6C1695F1955B9460018E18F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6C169601955B9460018E18F /* FlappyFace-Info.plist */,
+				E6C169611955B9460018E18F /* InfoPlist.strings */,
+				E6C169641955B9460018E18F /* main.m */,
+				E6C169661955B9460018E18F /* FlappyFace-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6C169851955B9470018E18F /* FlappyFaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6C1698B1955B9470018E18F /* FlappyFaceTests.m */,
+				E6C169861955B9470018E18F /* Supporting Files */,
+			);
+			path = FlappyFaceTests;
+			sourceTree = "<group>";
+		};
+		E6C169861955B9470018E18F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6C169871955B9470018E18F /* FlappyFaceTests-Info.plist */,
+				E6C169881955B9470018E18F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6C169521955B9460018E18F /* FlappyFace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6C1698F1955B9470018E18F /* Build configuration list for PBXNativeTarget "FlappyFace" */;
+			buildPhases = (
+				E6C1694F1955B9460018E18F /* Sources */,
+				E6C169501955B9460018E18F /* Frameworks */,
+				E6C169511955B9460018E18F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlappyFace;
+			productName = FlappyFace;
+			productReference = E6C169531955B9460018E18F /* FlappyFace.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E6C1697D1955B9470018E18F /* FlappyFaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6C169921955B9470018E18F /* Build configuration list for PBXNativeTarget "FlappyFaceTests" */;
+			buildPhases = (
+				E6C1697A1955B9470018E18F /* Sources */,
+				E6C1697B1955B9470018E18F /* Frameworks */,
+				E6C1697C1955B9470018E18F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6C169841955B9470018E18F /* PBXTargetDependency */,
+			);
+			name = FlappyFaceTests;
+			productName = FlappyFaceTests;
+			productReference = E6C1697E1955B9470018E18F /* FlappyFaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6C1694B1955B9460018E18F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "iD Tech";
+				TargetAttributes = {
+					E6C1697D1955B9470018E18F = {
+						TestTargetID = E6C169521955B9460018E18F;
+					};
+				};
+			};
+			buildConfigurationList = E6C1694E1955B9460018E18F /* Build configuration list for PBXProject "FlappyFace" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E6C1694A1955B9460018E18F;
+			productRefGroup = E6C169541955B9460018E18F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6C169521955B9460018E18F /* FlappyFace */,
+				E6C1697D1955B9470018E18F /* FlappyFaceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6C169511955B9460018E18F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C169771955B9460018E18F /* Spaceship.png in Resources */,
+				E6C169791955B9460018E18F /* Images.xcassets in Resources */,
+				E6C1696F1955B9460018E18F /* Main_iPad.storyboard in Resources */,
+				E6C1696C1955B9460018E18F /* Main_iPhone.storyboard in Resources */,
+				E6C169631955B9460018E18F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6C1697C1955B9470018E18F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C1698A1955B9470018E18F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6C1694F1955B9460018E18F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C169751955B9460018E18F /* MyScene.m in Sources */,
+				E6C169721955B9460018E18F /* ViewController.m in Sources */,
+				E6C169691955B9460018E18F /* AppDelegate.m in Sources */,
+				E6C169651955B9460018E18F /* main.m in Sources */,
+				E6C169971955BD240018E18F /* FirstPictureViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6C1697A1955B9470018E18F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C1698C1955B9470018E18F /* FlappyFaceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6C169841955B9470018E18F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6C169521955B9460018E18F /* FlappyFace */;
+			targetProxy = E6C169831955B9470018E18F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E6C169611955B9460018E18F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6C169621955B9460018E18F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E6C1696A1955B9460018E18F /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6C1696B1955B9460018E18F /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		E6C1696D1955B9460018E18F /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6C1696E1955B9460018E18F /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		E6C169881955B9470018E18F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6C169891955B9470018E18F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E6C1698D1955B9470018E18F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E6C1698E1955B9470018E18F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6C169901955B9470018E18F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlappyFace/FlappyFace-Prefix.pch";
+				INFOPLIST_FILE = "FlappyFace/FlappyFace-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E6C169911955B9470018E18F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlappyFace/FlappyFace-Prefix.pch";
+				INFOPLIST_FILE = "FlappyFace/FlappyFace-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E6C169931955B9470018E18F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlappyFace.app/FlappyFace";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlappyFace/FlappyFace-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FlappyFaceTests/FlappyFaceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E6C169941955B9470018E18F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlappyFace.app/FlappyFace";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlappyFace/FlappyFace-Prefix.pch";
+				INFOPLIST_FILE = "FlappyFaceTests/FlappyFaceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6C1694E1955B9460018E18F /* Build configuration list for PBXProject "FlappyFace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6C1698D1955B9470018E18F /* Debug */,
+				E6C1698E1955B9470018E18F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6C1698F1955B9470018E18F /* Build configuration list for PBXNativeTarget "FlappyFace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6C169901955B9470018E18F /* Debug */,
+				E6C169911955B9470018E18F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E6C169921955B9470018E18F /* Build configuration list for PBXNativeTarget "FlappyFaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6C169931955B9470018E18F /* Debug */,
+				E6C169941955B9470018E18F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6C1694B1955B9460018E18F /* Project object */;
+}

@@ -1,0 +1,13 @@
+//
+//  MyScene.h
+//  FlappyFace
+//
+
+//  Copyright (c) 2014 iD Tech. All rights reserved.
+//
+
+#import <SpriteKit/SpriteKit.h>
+
+@interface MyScene : SKScene
+
+@end
