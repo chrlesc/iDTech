@@ -10,10 +10,10 @@
 
 @implementation MyScene
 
-#define TIME 1.5
+#define TIME 2.5
 #define NUM_BACKGROUND 3
 #define MINIMUM_PILLER_HEIGHT 50.0f
-#define GAP_BETWEEN_TOP_AND_BOTTOM_PILLER 200.0f
+#define GAP_BETWEEN_TOP_AND_BOTTOM_PILLER 130.0f
 
 static const uint32_t pillarCategory            =  0x1 << 0;
 static const uint32_t flappyBirdCategory        =  0x1 << 1;
@@ -79,7 +79,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
         
         //To detect collision detection
         self.physicsWorld.contactDelegate = self;
-        self.physicsWorld.gravity = CGVectorMake(0.0, 0.0);
+     //   self.physicsWorld.gravity = CGVectorMake(0.0, 0.0);
         
 
     }
@@ -96,7 +96,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 -(void)initalizingScrollingBackground
 {
-    for (int i = 0; i < NUM_BACKGROUND; i++)
+  /*  for (int i = 0; i < NUM_BACKGROUND; i++)
     {
        // int type = arc4random() % 3+1;
         int type = 2;
@@ -108,11 +108,11 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
         bg.name = @"bg";
         
         [self addChild:bg];
-    }
+    }*/
 }
 - (void)moveBottomScroller
 {
-    [self enumerateChildNodesWithName:@"bg" usingBlock: ^(SKNode *node, BOOL *stop)
+ /*   [self enumerateChildNodesWithName:@"bg" usingBlock: ^(SKNode *node, BOOL *stop)
      {
          SKSpriteNode * bg = (SKSpriteNode *) node;
          CGPoint bgVelocity = CGPointMake(-BG_VELOCITY, 0);
@@ -128,21 +128,23 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
          
         [bg removeFromParent];
          [self addChild:bg];        //Ordering is not possible. so this is a hack
-     }];
+     }];*/
 }
 
 - (void)initializeBird
 {
-    self.flappyBird = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-    self.flappyBird.position = CGPointMake(self.backgroundImageNode.size.width * 0.3f, self.frame.size.height * 0.6f);
-    [self.flappyBird setScale:0.50f];
-    [self.flappyBird setZRotation:-M_PI/2.0];
+    self.flappyBird = [SKSpriteNode spriteNodeWithImageNamed:@"Bird"];
+    self.flappyBird.position = CGPointMake(self.frame.size.width * 0.3f, self.frame.size.height * 0.6f);
+   // CGSize size = _flappyBird.frame.size;
+    [self.flappyBird setScale:0.25f];
+   // CGSize nsize = _flappyBird.frame.size;
+   // [self.flappyBird setZRotation:-M_PI/2.0];
     
     /*
      * Create a physics and specify its geometrical shape so that collision algorithm
      * can work more prominently
      */
-    _flappyBird.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_flappyBird.size];
+    _flappyBird.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_flappyBird.size.height/2.0];
     _flappyBird.physicsBody.dynamic = YES;
     
     //Tell SpriteKit to detect very precise collision detection
@@ -162,19 +164,18 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 - (SKSpriteNode*) createPillerWithUpwardDirection:(BOOL) isUpwards
 {
-    NSString* pillerImageName = nil;
-    SKSpriteNode *piller = [SKSpriteNode spriteNodeWithImageNamed:@"UpwardTower"];
+    SKSpriteNode *piller = [SKSpriteNode spriteNodeWithImageNamed:@"Pipe"];
     if (!isUpwards)
     {
         [piller setZRotation:M_PI];
     }
     
-    [piller setYScale:30];
+    //[piller setYScale:30];
     /*
      * Create a physics and specify its geometrical shape so that collision algorithm
      * can work more prominently
      */
-    piller.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:piller.size];
+    piller.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(piller.size.width-8,piller.size.height-8)];
     piller.physicsBody.dynamic = YES;
     
     //Category to which this object belongs to
