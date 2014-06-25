@@ -25,13 +25,16 @@
 }
 //Called before we move to this view.
 - (void)didMoveToView:(SKView *)view{
-    region = [[UIView alloc]initWithFrame:CGRectMake(wLabel.frame.origin.x, wLabel.frame.origin.y- wLabel.frame.size.height, wLabel.frame.size.width, wLabel.frame.size.height)];
-    //Make the view invisible.
-    [region setBackgroundColor:[UIColor redColor]];
-    [self.view addSubview:region];
-    tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeView)];
-    [region addGestureRecognizer:tapGesture];
+    //panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(zo)]
+   // tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeView)];
+   // [region addGestureRecognizer:tapGesture];
     
+}
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView{
+    [wLabel setScale:scrollView.zoomScale];
+}
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return self.view;
 }
 - (void)changeView{
     MyScene *nextScene = [[MyScene alloc] initWithSize:self.size];
@@ -39,8 +42,8 @@
 }
 //Called right before this view resigns.
 - (void)willMoveFromView:(SKView *)view{
-    [region removeFromSuperview];
-    [play removeFromSuperview];
+ //   [region removeFromSuperview];
+  //  [play removeFromSuperview];
     //Gets called implicity by garbage collector.
     //[region removeGestureRecognizer:tapGesture];
 }

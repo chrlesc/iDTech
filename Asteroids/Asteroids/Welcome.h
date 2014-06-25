@@ -8,10 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface Welcome : SKScene{
+@interface Welcome : SKScene <UIScrollViewDelegate>{
     UITapGestureRecognizer *tapGesture;
+    UIPanGestureRecognizer *panGesture;
     UIButton *play;
-    UIView *region;
     SKLabelNode *wLabel;
 }
 

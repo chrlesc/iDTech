@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+     UIScrollView *region;
+}
 -(void)initGame;
 -(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event;
 @end
