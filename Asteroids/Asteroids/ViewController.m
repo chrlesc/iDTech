@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "MyScene.h"
-#import "Welcome.h"
+
 
 @implementation ViewController
 
@@ -45,21 +45,64 @@
 }
 
 -(void)initGame{
-    region = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    [region setUserInteractionEnabled:YES];
-    [region setBackgroundColor:[UIColor clearColor]];
-    //region = [[UIView alloc]initWithFrame:CGRectMake(wLabel.frame.origin.x, wLabel.frame.origin.y- wLabel.frame.size.height, wLabel.frame.size.width, wLabel.frame.size.height)];
-    //Make the view invisible.
+    //Instantiate the SKView.
     SKView *skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
-    [skView addSubview:region];
     
+    //Instantiate the screen.
     Welcome *scene = [Welcome sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
-    [region setDelegate:scene];
+    // Present the scene.
     [skView presentScene:scene];
+    _scene = scene;
+    
+    CGSize contentSize = skView.frame.size;
+    contentSize.height *= 1.5;
+    contentSize.width *= 1.5;
+    [scene setContentSize:contentSize];
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:skView.frame];
+    [scrollView setContentSize:contentSize];
+    
+    scrollView.delegate = self;
+    [scrollView setMinimumZoomScale:1.0];
+    [scrollView setMaximumZoomScale:3.0];
+    [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
+    UIView *clearContentView = [[UIView alloc] initWithFrame:(CGRect){.origin = CGPointZero, .size = contentSize}];
+    [clearContentView setBackgroundColor:[UIColor clearColor]];
+    [scrollView addSubview:clearContentView];
+    
+    _clearContentView = clearContentView;
+    
+}
+-(void)adjustContent:(UIScrollView *)scrollView
+{
+    CGFloat zoomScale = [scrollView zoomScale];
+    [self.scene setContentScale:zoomScale];
+    CGPoint contentOffset = [scrollView contentOffset];
+    [self.scene setContentOffset:contentOffset];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self adjustContent:scrollView];
+}
+
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.clearContentView;
+}
+
+-(void)scrollViewDidTransform:(UIScrollView *)scrollView
+{
+    [self adjustContent:scrollView];
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale; // scale between minimum and maximum. called after any 'bounce' animations
+{
+    [self adjustContent:scrollView];
 }
 
 @end
