@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad
 {
+    cageFaces = [[NSMutableArray alloc] init];
 
 }
 
@@ -26,6 +27,11 @@
 }
 
 -(IBAction) takeApicture:(id)sender{
+    for(int i = 0 ; i < cageFaces.count; i++){
+        UIView *face = [cageFaces objectAtIndex:i];
+        [face removeFromSuperview];
+    }
+    [cageFaces removeAllObjects];
     //Check if the camera is available for app usage.
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeCamera])
@@ -48,49 +54,130 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
-        UIImage *image = info[UIImagePickerControllerOriginalImage];
+        image = info[UIImagePickerControllerOriginalImage];
         
         //Cageify the image
-        
         self.imageView.image = image;
-       [self cageify:image];
-        if (self.newMedia)
+        [self cageify];
+        //Save code.
+       /* if (self.newMedia)
             UIImageWriteToSavedPhotosAlbum(image,
                                            self,
                                            @selector(image:finishedSavingWithError:contextInfo:),
-                                           nil);
+                                           nil);*/
     }
 }
 
-- (void) cageify:(UIImage *)image{
-    CIContext *context = [CIContext contextWithOptions:nil];
-    CIImage *myImage = image.CIImage;
-    NSDictionary *opts = @{ CIDetectorAccuracy : CIDetectorAccuracyHigh ,
-                            CIDetectorImageOrientation : [[myImage properties] valueForKey:(NSString *)kCGImagePropertyOrientation]};
-    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeFace
-                                              context:context
-                                              options:opts];
+- (void) cageify{
+    int exifOrientation;
+    switch (image.imageOrientation) {
+        case UIImageOrientationUp:
+            exifOrientation = 1;
+            break;
+        case UIImageOrientationDown:
+            exifOrientation = 3;
+            break;
+        case UIImageOrientationLeft:
+            exifOrientation = 8;
+            break;
+        case UIImageOrientationRight:
+            exifOrientation = 6;
+            break;
+        case UIImageOrientationUpMirrored:
+            exifOrientation = 2;
+            break;
+        case UIImageOrientationDownMirrored:
+            exifOrientation = 4;
+            break;
+        case UIImageOrientationLeftMirrored:
+            exifOrientation = 5;
+            break;
+        case UIImageOrientationRightMirrored:
+            exifOrientation = 7;
+            break;
+        default:
+            break;
+    }
     
-    NSArray *features = [detector featuresInImage:myImage options:opts];
+    NSDictionary *detectorOptions = @{ CIDetectorAccuracy : CIDetectorAccuracyHigh }; // TODO: read doc for more tuneups
+    CIDetector *faceDetector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:detectorOptions];
+    NSArray *features = [faceDetector featuresInImage:[CIImage imageWithCGImage:self.imageView.image.CGImage]
+                                              options:@{CIDetectorImageOrientation:[NSNumber numberWithInt:exifOrientation]}];
     
     for (CIFaceFeature *f in features)
     {
-        UIView *faceView = [[UIView alloc]initWithFrame:f.bounds];
-        faceView.layer.borderWidth = 1;
-        faceView.layer.borderColor = [[UIColor orangeColor] CGColor];
-        [self.view addSubview:faceView];
+        // Translate CoreImage coordinates to UIKit coordinates
+        CGPoint origin = [self fromPoint:f.bounds.origin];
+        CGRect faceRect = CGRectMake(origin.x,origin.y,f.bounds.size.width,f.bounds.size.height);
+        CGSize originalSize = [image size];
+        CGSize currentSize = self.imageView.bounds.size;
+        CGFloat widthScale = currentSize.width/originalSize.width;
+        CGFloat heightScale = currentSize.height/originalSize.height;
+        CGFloat eyeDistance = (f.rightEyePosition.x - f.leftEyePosition.x)*widthScale;
+        CGFloat eyeMouthDistance = (f.rightEyePosition.y - f.mouthPosition.y)*heightScale;
+       /* float angle = 0.f;
+        if (f.leftEyePosition.x != f.rightEyePosition.x) {
+            angle = atan2(f.leftEyePosition.y - f.rightEyePosition.y,f.leftEyePosition.x - f.rightEyePosition.x);
+        }*/
+        faceRect = CGRectMake(faceRect.origin.x*widthScale-eyeDistance, faceRect.origin.y*heightScale-2*eyeMouthDistance, faceRect.size.width*widthScale+2*eyeDistance, faceRect.size.height*heightScale+2*eyeMouthDistance);
         
-    /*    if (f.hasLeftEyePosition)
-            NSLog("Left eye %g %g", f.leftEyePosition.x. f.leftEyePosition.y);
-        
-        if (f.hasRightEyePosition)
-            NSLog("Right eye %g %g", f.rightEyePosition.x. f.rightEyePosition.y);
-        
-        if (f.hasmouthPosition)
-            NSLog("Mouth %g %g", f.mouthPosition.x. f.mouthPosition.y);*/
-    }
 
+        UIImageView *cageFace = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nicolasCage"]];
+        [cageFace setFrame:faceRect];
+        [cageFace setContentMode:UIViewContentModeScaleAspectFit];
+        [cageFaces addObject:cageFace];
+        //Rotate the face
+      //  CGAffineTransform transform = CGAffineTransformMakeRotation(angle);
+      //  cageFace.transform = transform;
+        [self.imageView addSubview:cageFace];
+    }
 }
+- (CGPoint) fromPoint:(CGPoint) originalPoint {
+    
+    CGFloat imageWidth = image.size.width;
+    CGFloat imageHeight = image.size.height;
+    
+    CGPoint convertedPoint;
+    
+    switch (image.imageOrientation) {
+        case UIImageOrientationUp:
+            convertedPoint.x = originalPoint.x;
+            convertedPoint.y = imageHeight - originalPoint.y;
+            break;
+        case UIImageOrientationDown:
+            convertedPoint.x = imageWidth - originalPoint.x;
+            convertedPoint.y = originalPoint.y;
+            break;
+        case UIImageOrientationLeft:
+            convertedPoint.x = imageWidth - originalPoint.y;
+            convertedPoint.y = imageHeight - originalPoint.x;
+            break;
+        case UIImageOrientationRight:
+            convertedPoint.x = originalPoint.y;
+            convertedPoint.y = originalPoint.x;
+            break;
+        case UIImageOrientationUpMirrored:
+            convertedPoint.x = imageWidth - originalPoint.x;
+            convertedPoint.y = imageHeight - originalPoint.y;
+            break;
+        case UIImageOrientationDownMirrored:
+            convertedPoint.x = originalPoint.x;
+            convertedPoint.y = originalPoint.y;
+            break;
+        case UIImageOrientationLeftMirrored:
+            convertedPoint.x = imageWidth - originalPoint.y;
+            convertedPoint.y = originalPoint.x;
+            break;
+        case UIImageOrientationRightMirrored:
+            convertedPoint.x = originalPoint.y;
+            convertedPoint.y = imageHeight - originalPoint.x;
+            break;
+        default:
+            break;
+    }
+    return convertedPoint;
+}
+
 
 -(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {

@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
-#import <ImageIO/ImageIO.h>
+#import <CoreImage/CoreImage.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface FirstPictureViewController : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface FirstPictureViewController : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate>{
+    UIImage *image;
+    NSMutableArray *cageFaces;
+}
 - (IBAction)takeApicture:(id)sender;
+- (CGPoint) fromPoint:(CGPoint)originalPoint;
 @property BOOL newMedia;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-- (void) cageify:(UIImage *)image;
+- (void) cageify;
 @end
