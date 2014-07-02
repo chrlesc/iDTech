@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="CameraViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YLm-QY-xRi"/>
+                        <viewControllerLayoutGuide type="bottom" id="R4W-gF-WCo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8P-hc-bgZ">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Camera" id="YaF-Jc-ua9">
+                                        <connections>
+                                            <action selector="useCamera:" destination="vXZ-lx-hvc" id="xDW-SV-elf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Camera Roll" id="zMY-3Y-ZUF">
+                                        <connections>
+                                            <action selector="useCameraRoll:" destination="vXZ-lx-hvc" id="OB7-5A-sey"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="Fq6-m0-DxO">
+                                <rect key="frame" x="16" y="34" width="288" height="474"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Fq6-m0-DxO" secondAttribute="trailing" constant="16" id="2e8-cp-938"/>
+                            <constraint firstItem="R4W-gF-WCo" firstAttribute="top" secondItem="l8P-hc-bgZ" secondAttribute="bottom" id="D5T-bF-mge"/>
+                            <constraint firstItem="l8P-hc-bgZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="OWw-qY-YrX"/>
+                            <constraint firstItem="l8P-hc-bgZ" firstAttribute="top" secondItem="Fq6-m0-DxO" secondAttribute="bottom" constant="16" id="arr-b7-dZD"/>
+                            <constraint firstItem="Fq6-m0-DxO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="cDT-cY-uSN"/>
+                            <constraint firstAttribute="trailing" secondItem="l8P-hc-bgZ" secondAttribute="trailing" id="nZE-8c-EfH"/>
+                            <constraint firstItem="Fq6-m0-DxO" firstAttribute="top" secondItem="YLm-QY-xRi" secondAttribute="bottom" constant="14" id="wif-2o-D0N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Fq6-m0-DxO" id="WJJ-vU-iKw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
