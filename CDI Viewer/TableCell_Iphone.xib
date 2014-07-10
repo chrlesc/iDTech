@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TableCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCell" rowHeight="36" id="Lyq-GC-QeK" customClass="TableCell">
+            <rect key="frame" x="0.0" y="0.0" width="297" height="37"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lyq-GC-QeK" id="Tam-mS-n5u">
+                <rect key="frame" x="0.0" y="0.0" width="297" height="36"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FileName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erT-tI-EZu">
+                        <rect key="frame" x="5" y="2" width="281" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES"/>
+                        </accessibility>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="meV-j9-p50"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="highlightedColor"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2Za-WS-kv8" appends="YES" id="vM7-rd-8xv"/>
+                        </connections>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="fileID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSm-vX-7Dr">
+                        <rect key="frame" x="46" y="15" width="47" height="15"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="GwZ-NX-cCd"/>
+                            <constraint firstAttribute="width" constant="47" id="oCm-8X-yqI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doc ID:  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7h-cN-omT">
+                        <rect key="frame" x="10" y="15" width="37" height="15"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="7nH-gE-pvB"/>
+                            <constraint firstAttribute="width" constant="37" id="Cq6-VT-Irb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="PMH-OE-W3u">
+                        <rect key="frame" x="10" y="31" width="280" height="2"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES"/>
+                        </accessibility>
+                    </progressView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETt-5o-EMf">
+                        <rect key="frame" x="101" y="15" width="64" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="DBx-BR-nMm"/>
+                            <constraint firstAttribute="height" constant="19" id="JI6-uc-mkm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                        <state key="normal" title="Open With">
+                            <color key="titleColor" red="0.22690465330000001" green="0.84106979930000003" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="openDoc" destination="Lyq-GC-QeK" eventType="touchUpInside" id="6Lg-42-8gU"/>
+                        </connections>
+                    </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8be-l0-WuK">
+                        <rect key="frame" x="5" y="2" width="281" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="mpf-C1-bqe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="exitEditText:" destination="Lyq-GC-QeK" eventType="editingDidEndOnExit" id="WW1-gk-BIp"/>
+                        </connections>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmQ-55-av3">
+                        <rect key="frame" x="180" y="15" width="39" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="39" id="UhV-LS-utf"/>
+                            <constraint firstAttribute="height" constant="19" id="Ypg-PP-wcZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                        <state key="normal" title="Delete">
+                            <color key="titleColor" red="1" green="0.25171076640000001" blue="0.03529411927" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="deleteDoc" destination="Lyq-GC-QeK" eventType="touchUpInside" id="0BB-HP-4T3"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzN-5m-nlC">
+                        <rect key="frame" x="243" y="15" width="43" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="43" id="UzY-rt-mFm"/>
+                            <constraint firstAttribute="height" constant="19" id="V9W-rl-WSc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                        <state key="normal" title="Update">
+                            <color key="titleColor" red="1" green="0.68236770069999997" blue="0.03529411927" alpha="1" colorSpace="deviceRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="updateDoc" destination="Lyq-GC-QeK" eventType="touchUpInside" id="cyr-Dj-pAM"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="PMH-OE-W3u" secondAttribute="trailing" constant="7" id="0LD-HX-Hvx"/>
+                    <constraint firstItem="PMH-OE-W3u" firstAttribute="top" secondItem="Tam-mS-n5u" secondAttribute="top" constant="31" id="1bB-kJ-Aac"/>
+                    <constraint firstAttribute="trailing" secondItem="8be-l0-WuK" secondAttribute="trailing" constant="11" id="46f-QM-rRs"/>
+                    <constraint firstItem="8be-l0-WuK" firstAttribute="leading" secondItem="Tam-mS-n5u" secondAttribute="leading" constant="5" id="6x3-lE-bRg"/>
+                    <constraint firstItem="eSm-vX-7Dr" firstAttribute="top" secondItem="Tam-mS-n5u" secondAttribute="top" constant="15" id="744-dQ-QPl"/>
+                    <constraint firstItem="PMH-OE-W3u" firstAttribute="leading" secondItem="Tam-mS-n5u" secondAttribute="leading" constant="10" id="7Or-pH-dIy"/>
+                    <constraint firstItem="QzN-5m-nlC" firstAttribute="leading" secondItem="hmQ-55-av3" secondAttribute="trailing" constant="24" id="975-9I-EQ8"/>
+                    <constraint firstItem="o7h-cN-omT" firstAttribute="top" secondItem="Tam-mS-n5u" secondAttribute="top" constant="15" id="9pX-gn-Bnb"/>
+                    <constraint firstAttribute="trailing" secondItem="QzN-5m-nlC" secondAttribute="trailing" constant="11" id="Gxe-HO-ku2"/>
+                    <constraint firstItem="hmQ-55-av3" firstAttribute="leading" secondItem="ETt-5o-EMf" secondAttribute="trailing" constant="15" id="LtW-Tq-mU4"/>
+                    <constraint firstItem="erT-tI-EZu" firstAttribute="leading" secondItem="Tam-mS-n5u" secondAttribute="leading" constant="5" id="Pjo-83-e2f"/>
+                    <constraint firstItem="8be-l0-WuK" firstAttribute="top" secondItem="Tam-mS-n5u" secondAttribute="top" constant="2" id="Ri3-RN-hdT"/>
+                    <constraint firstItem="QzN-5m-nlC" firstAttribute="top" secondItem="Tam-mS-n5u" secondAttribute="top" constant="15" id="SO5-n4-599"/>
+                    <constraint firstAttribute="trailing" secondItem="erT-tI-EZu" secondAttribute="trailing" constant="11" id="as1-lH-OeT"/>
+                    <constraint firstItem="ETt-5o-EMf" firstAttribute="top" secondItem="Tam-mS-n5u" secondAttribute="top" constant="15" id="f67-zC-DTd"/>
+                    <constraint firstItem="o7h-cN-omT" firstAttribute="leading" secondItem="Tam-mS-n5u" secondAttribute="leading" constant="10" id="gLX-Vn-YBA"/>
+                    <constraint firstItem="hmQ-55-av3" firstAttribute="top" secondItem="Tam-mS-n5u" secondAttribute="top" constant="15" id="oQx-lF-KjK"/>
+                    <constraint firstItem="eSm-vX-7Dr" firstAttribute="leading" secondItem="Tam-mS-n5u" secondAttribute="leading" constant="46" id="pFi-MI-kNS"/>
+                    <constraint firstItem="erT-tI-EZu" firstAttribute="top" secondItem="Tam-mS-n5u" secondAttribute="top" constant="2" id="r15-qB-ste"/>
+                </constraints>
+            </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
+            </accessibility>
+            <gestureRecognizers/>
+            <connections>
+                <outlet property="del" destination="hmQ-55-av3" id="IeA-xe-eIV"/>
+                <outlet property="editFileName" destination="8be-l0-WuK" id="LLE-R4-fAO"/>
+                <outlet property="fileID" destination="eSm-vX-7Dr" id="b5N-5l-xnx"/>
+                <outlet property="fileName" destination="erT-tI-EZu" id="HD2-gS-SO1"/>
+                <outlet property="open" destination="ETt-5o-EMf" id="126-oM-adh"/>
+                <outlet property="progress" destination="PMH-OE-W3u" id="6yg-ul-PIB"/>
+                <outlet property="update" destination="QzN-5m-nlC" id="YGh-bf-OcO"/>
+                <outletCollection property="gestureRecognizers" destination="GfM-yw-byJ" appends="YES" id="hTI-x7-JUo"/>
+                <outletCollection property="gestureRecognizers" destination="2Za-WS-kv8" appends="YES" id="Dew-ZJ-On3"/>
+                <outletCollection property="gestureRecognizers" destination="0Qb-Vn-wX0" appends="YES" id="MsG-Av-ZLa"/>
+            </connections>
+        </tableViewCell>
+        <swipeGestureRecognizer direction="right" id="GfM-yw-byJ">
+            <connections>
+                <action selector="swipeRight:" destination="Lyq-GC-QeK" id="rNv-49-6Lb"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1.2" id="2Za-WS-kv8">
+            <connections>
+                <action selector="longPress:" destination="Lyq-GC-QeK" id="lP2-kv-dnd"/>
+            </connections>
+        </pongPressGestureRecognizer>
+        <tapGestureRecognizer id="0Qb-Vn-wX0">
+            <connections>
+                <action selector="Onetap:" destination="Lyq-GC-QeK" id="O7h-wO-Pkb"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>
