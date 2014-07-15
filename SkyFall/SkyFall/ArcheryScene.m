@@ -68,7 +68,7 @@ static const uint32_t ballCategory = 0x1 << 1;
 
 - (SKSpriteNode *)createArcherNode
 {
-    SKSpriteNode *archerNode =
+    SKSpriteNode *archerNode =  
     [[SKSpriteNode alloc] initWithImageNamed:@"archer001.png"];
     
     archerNode.name = @"archerNode";

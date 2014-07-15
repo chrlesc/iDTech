@@ -75,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A21D1D2D196EC49D00F7BD69 /* FastPdfKit.framework */ = {isa = PBXFileReference; lastKnownFileType = file; path = FastPdfKit.framework; sourceTree = "<group>"; };
 		E6179CE0187752F600246109 /* CDI Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CDI Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6179CE3187752F600246109 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6179CE5187752F600246109 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -205,6 +206,7 @@
 		E6179CE2187752F600246109 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A21D1D2D196EC49D00F7BD69 /* FastPdfKit.framework */,
 				E6D4325418C212B400D4B7F3 /* FastPdfKit.embeddedframework */,
 				E68A6046187B84FB00364CFC /* libxml2.dylib */,
 				E6179CE3187752F600246109 /* Foundation.framework */,

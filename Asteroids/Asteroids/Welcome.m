@@ -55,12 +55,18 @@
         
         
     
-        //Add so that the font moves and zooms.
-        wLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        [wLabel setPosition:CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame))];
-        [wLabel setText:@"Welcome To Asteroids"];
-        [wLabel setFontSize:24.0];
-        [_spriteForScrollingGeometry addChild:wLabel];
+        SKSpriteNode *blueTestSprite = [SKSpriteNode spriteNodeWithColor:[SKColor blueColor]
+                                                                    size:(CGSize){.width = size.width*.25,
+                                                                        .height = size.height*.25}];
+        [blueTestSprite setName:@"blueTestSprite"];
+        [blueTestSprite setAnchorPoint:(CGPoint){0,0}];
+        [blueTestSprite setPosition:(CGPoint){.x = size.width * .25, .y = size.height *.65}];
+        [_spriteForScrollingGeometry addChild:blueTestSprite];
+        
+        SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        [label setText:@"Welcome"];
+        [label setPosition:(CGPoint){200,200}];
+        [_spriteForScrollingGeometry addChild:label];
         
         _contentSize = size;
         _contentOffset = (CGPoint){0,0};
@@ -68,7 +74,7 @@
     }
     return self;
 }
-
+ 
 - (void)changeView{
     MyScene *nextScene = [[MyScene alloc] initWithSize:self.size];
     [self.view presentScene:nextScene];

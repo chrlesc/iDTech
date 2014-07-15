@@ -22,6 +22,8 @@
 		A21D1D15196C20E800F7BD69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21D1CF4196C20E700F7BD69 /* UIKit.framework */; };
 		A21D1D1D196C20E800F7BD69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A21D1D1B196C20E800F7BD69 /* InfoPlist.strings */; };
 		A21D1D1F196C20E800F7BD69 /* coreDataTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A21D1D1E196C20E800F7BD69 /* coreDataTestTests.m */; };
+		A21D1D29196C211C00F7BD69 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21D1D28196C211C00F7BD69 /* CoreData.framework */; };
+		A21D1D2C196C535D00F7BD69 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A21D1D2A196C535D00F7BD69 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		A21D1D1A196C20E800F7BD69 /* coreDataTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "coreDataTestTests-Info.plist"; sourceTree = "<group>"; };
 		A21D1D1C196C20E800F7BD69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A21D1D1E196C20E800F7BD69 /* coreDataTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = coreDataTestTests.m; sourceTree = "<group>"; };
+		A21D1D28196C211C00F7BD69 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A21D1D2B196C535D00F7BD69 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21D1D29196C211C00F7BD69 /* CoreData.framework in Frameworks */,
 				A21D1CF3196C20E700F7BD69 /* CoreGraphics.framework in Frameworks */,
 				A21D1CF5196C20E700F7BD69 /* UIKit.framework in Frameworks */,
 				A21D1CF1196C20E700F7BD69 /* Foundation.framework in Frameworks */,
@@ -103,6 +108,7 @@
 		A21D1CEF196C20E700F7BD69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A21D1D28196C211C00F7BD69 /* CoreData.framework */,
 				A21D1CF0196C20E700F7BD69 /* Foundation.framework */,
 				A21D1CF2196C20E700F7BD69 /* CoreGraphics.framework */,
 				A21D1CF4196C20E700F7BD69 /* UIKit.framework */,
@@ -120,6 +126,7 @@
 				A21D1D05196C20E700F7BD69 /* Main_iPad.storyboard */,
 				A21D1D08196C20E700F7BD69 /* ViewController.h */,
 				A21D1D09196C20E700F7BD69 /* ViewController.m */,
+				A21D1D2A196C535D00F7BD69 /* Model.xcdatamodeld */,
 				A21D1D0B196C20E700F7BD69 /* Images.xcassets */,
 				A21D1CF7196C20E700F7BD69 /* Supporting Files */,
 			);
@@ -256,6 +263,7 @@
 				A21D1D0A196C20E700F7BD69 /* ViewController.m in Sources */,
 				A21D1D01196C20E700F7BD69 /* AppDelegate.m in Sources */,
 				A21D1CFD196C20E700F7BD69 /* main.m in Sources */,
+				A21D1D2C196C535D00F7BD69 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +401,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "coreDataTest/coreDataTest-Prefix.pch";
 				INFOPLIST_FILE = "coreDataTest/coreDataTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,6 +415,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "coreDataTest/coreDataTest-Prefix.pch";
 				INFOPLIST_FILE = "coreDataTest/coreDataTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -470,6 +480,7 @@
 				A21D1D24196C20E800F7BD69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A21D1D25196C20E800F7BD69 /* Build configuration list for PBXNativeTarget "coreDataTestTests" */ = {
 			isa = XCConfigurationList;
@@ -478,8 +489,22 @@
 				A21D1D27196C20E800F7BD69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A21D1D2A196C535D00F7BD69 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A21D1D2B196C535D00F7BD69 /* Model.xcdatamodel */,
+			);
+			currentVersion = A21D1D2B196C535D00F7BD69 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A21D1CE5196C20E700F7BD69 /* Project object */;
 }

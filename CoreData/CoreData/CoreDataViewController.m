@@ -36,21 +36,17 @@
 }
 
 - (IBAction)saveData:(id)sender {
-    CoreDataAppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
+    CoreDataAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 
-   NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
+   NSManagedObjectContext *context = [appDelegate managedObjectContext];
    NSManagedObject *newContact;
-   newContact = [NSEntityDescription
-       insertNewObjectForEntityForName:@"Contacts"
-       inManagedObjectContext:context];
-   [newContact setValue: _name.text forKey:@"name"];
-   [newContact setValue: _address.text forKey:@"address"];
-   [newContact setValue: _phone.text forKey:@"phone"];
-   _name.text = @"";
-   _address.text = @"";
-   _phone.text = @"";
+   newContact = [NSEntityDescription insertNewObjectForEntityForName:@"Bookmark" inManagedObjectContext:context];
+   [newContact setValue: _bookmarkName.text forKey:@"bookmarkName"];
+   [newContact setValue: _lattitude.text forKey:@"lattitude"];
+   [newContact setValue: _longitude.text forKey:@"longitude"];
+   _bookmarkName.text = @"";
+   _lattitude.text = @"";
+   _longitude.text = @"";
    NSError *error;
    [context save:&error];
    _status.text = @"Contact saved";
@@ -58,35 +54,28 @@
 }
 
 - (IBAction)findContact:(id)sender {
-    CoreDataAppDelegate *appDelegate =
-       [[UIApplication sharedApplication] delegate];
+    CoreDataAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 
-    NSManagedObjectContext *context =
-       [appDelegate managedObjectContext];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
 
-    NSEntityDescription *entityDesc =
-       [NSEntityDescription entityForName:@"Contacts"
-       inManagedObjectContext:context];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Bookmark" inManagedObjectContext:context];
 
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDesc];
 
-    NSPredicate *pred =
-       [NSPredicate predicateWithFormat:@"(name = %@)",
-        _name.text];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(bookmarkName CONTAINS %@)", _bookmarkName.text];
     [request setPredicate:pred];
     NSManagedObject *matches = nil;
 
     NSError *error;
-    NSArray *objects = [context executeFetchRequest:request
-        error:&error];
+    NSArray *objects = [context executeFetchRequest:request error:&error];
 
     if ([objects count] == 0) {
        _status.text = @"No matches";
     } else {
        matches = objects[0];
-       _address.text = [matches valueForKey:@"address"];
-       _phone.text = [matches valueForKey:@"phone"];
+       _lattitude.text = [matches valueForKey:@"lattitude"];
+       _longitude.text = [matches valueForKey:@"longitude"];
        _status.text = [NSString stringWithFormat:
            @"%lu matches found", (unsigned long)[objects count]];
     }
