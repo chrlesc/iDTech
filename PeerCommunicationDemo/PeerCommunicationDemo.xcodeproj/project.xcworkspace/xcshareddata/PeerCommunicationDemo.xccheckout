@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>9C4F938F-9C0D-4731-B5FB-CAD602064B7E</string>
+	<string>84F267B6-190A-42D9-A429-428EABAC34F0</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TableExamples</string>
+	<string>PeerCommunicationDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</key>
+		<key>EB2F8499-6F9D-4012-BEED-3AE505646AB6</key>
 		<string>https://github.com/chrlesc/iDTech.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TableExamples/TableExamples.xcodeproj/project.xcworkspace</string>
+	<string>PeerCommunicationDemo/PeerCommunicationDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</key>
+		<key>EB2F8499-6F9D-4012-BEED-3AE505646AB6</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</string>
+	<string>EB2F8499-6F9D-4012-BEED-3AE505646AB6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5DCA727E-FCE0-477E-A615-A4808E0AC0FB</string>
+			<string>EB2F8499-6F9D-4012-BEED-3AE505646AB6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iDTech</string>
 		</dict>
