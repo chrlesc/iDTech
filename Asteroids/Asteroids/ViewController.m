@@ -73,6 +73,7 @@
     UIView *clearContentView = [[UIView alloc] initWithFrame:(CGRect){.origin = CGPointZero, .size = contentSize}];
     [clearContentView setBackgroundColor:[UIColor clearColor]];
     [scrollView addSubview:clearContentView];
+    [skView addSubview: scrollView];
     
     _clearContentView = clearContentView;
     

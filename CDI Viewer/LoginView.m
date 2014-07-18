@@ -109,11 +109,10 @@
     //Format the login post-body data.
     NSString *myRequestString = [NSString stringWithFormat:@"&txtUserName=%@&txtPassword=%@",user,password];
     myNewRequestString = [[NSString alloc] initWithString:myRequestString];
-    
-    //Setup the session.
+    //Setup the ses sion.
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     downloadDelegate* download_delegate = [[downloadDelegate alloc] init];
-    g.session = [NSURLSession sessionWithConfiguration:configuration delegate:download_delegate delegateQueue:[NSOperationQueue mainQueue]];
+    g.session = [NSURLSession sessionWithConfiguration:configuration delegate:download_delegate delegateQueue: ];
     
     //Configure the GET request to obtain the login page data.
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:restrictedURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120];

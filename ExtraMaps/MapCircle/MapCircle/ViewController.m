@@ -29,15 +29,22 @@
 }
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
-    rend *mapRend = [[rend alloc] initWithOverlay:overlay];
+   rend *mapRend = [[rend alloc] initWithOverlay:overlay];
+   // MKOverlayRenderer *mapRend = [[MKOverlayRenderer alloc] initWithOverlay:overlay];
     return mapRend;
 }
 - (IBAction)addCircle:(id)sender {
     CLLocationCoordinate2D pinCoordinate = {33.8090, -117.9190};
-    int radius = 100000;
+    int radius = 10000;
     //Make the actual overlay
     MKCircle *circ = [MKCircle circleWithCenterCoordinate:pinCoordinate radius:radius];
     [self.mapView addOverlay:circ];
+    
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    [point setTitle:@"Disneyland"];
+    [point setCoordinate:pinCoordinate];
+    
+    [self.mapView addAnnotation:point];
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(pinCoordinate, radius, radius);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];

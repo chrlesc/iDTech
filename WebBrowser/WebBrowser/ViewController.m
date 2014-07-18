@@ -77,7 +77,7 @@
     [self.DimView setBackgroundColor:[UIColor clearColor]];
     [self.DimView setUserInteractionEnabled:NO];
 }
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{   
     SettingsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
