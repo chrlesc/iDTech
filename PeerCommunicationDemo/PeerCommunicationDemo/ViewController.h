@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+    NSMutableArray *settingsArray;
+}
 @property (strong, nonatomic) IBOutlet UIView *shadedView;
 @property (strong, nonatomic) UITableView *settingsTable;
 - (IBAction)PullUpMenu:(id)sender;
