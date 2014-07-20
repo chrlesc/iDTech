@@ -10,7 +10,6 @@
 #import "SettingsMenuTableCell.h"
 #import "Global.h"
 
-#define ROW_HEIGHT 40.0f
 
 @interface ViewController ()
 
@@ -25,6 +24,8 @@
     settingsArray = [Global getSettingsArray];
     [settingsArray addObject:@{@"Title" : @"Settings",@"ImageName" : @"Settings"}];
     
+}
+- (void) viewWillLayoutSubviews {
     [self initSettingsTable];
 }
 
@@ -33,10 +34,14 @@
     [self tapToCloseMenu:nil];
 }
 - (void)initSettingsTable{
-    CGFloat tableY = MAX(self.view.bounds.size.height/2.0f,self.view.bounds.size.height-(settingsArray.count*ROW_HEIGHT));
+    if(_settingsTable){
+        [_settingsTable removeFromSuperview];
+    }
+    int rowHeight = self.view.bounds.size.height/10.0f;
+    CGFloat tableY = MAX(self.view.bounds.size.height/2.0f,self.view.bounds.size.height-(settingsArray.count*rowHeight));
     CGFloat tableX = self.view.bounds.size.width/16.0f;
     CGFloat tableWidth = self.view.bounds.size.width*(14.0f/16.0f);
-    CGFloat tableHeight = MIN(settingsArray.count*ROW_HEIGHT,self.view.bounds.size.height/2.0f);
+    CGFloat tableHeight = MIN(settingsArray.count*rowHeight,self.view.bounds.size.height/2.0f);
     _settingsTable = [[UITableView alloc] initWithFrame:CGRectMake(tableX,tableY,tableWidth,tableHeight) style:UITableViewStyleGrouped];
     _settingsTable.hidden = YES;
     _settingsTable.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _settingsTable.bounds.size.width, 0.01f)];
@@ -45,8 +50,9 @@
     [_settingsTable setDataSource:self];
     [_settingsTable setDelegate:self];
     
-    UINib *nib = [UINib nibWithNibName:@"SettingsMenuTableCell" bundle:[NSBundle mainBundle]];
-    [_settingsTable registerNib:nib forCellReuseIdentifier:@"settingsMenuTableCell"];
+    
+    //UINib *nib = [UINib nibWithNibName:@"SettingsMenuTableCell" bundle:[NSBundle mainBundle]];
+   // [_settingsTable registerNib:nib forCellReuseIdentifier:@"settingsMenuTableCell"];
     
     [self.view addSubview:_settingsTable];
 
@@ -59,7 +65,7 @@
     
 //Returns a pre-defined value that is set based on our created nib file.
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return ROW_HEIGHT;
+    return self.view.bounds.size.height/10.0f;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [settingsArray count];
@@ -73,10 +79,30 @@
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SettingsMenuTableCell *cell = [tableView dequeueReusableCellWithIdentifier: @"settingsMenuTableCell" forIndexPath:indexPath];
+    //Grab the dictionary to use to populate this particular row.
     NSDictionary *dictionary = [settingsArray objectAtIndex:indexPath.row];
-    cell.image.image = [UIImage imageNamed:[dictionary objectForKey:@"ImageName"]];
+    
+    // SettingsMenuTableCell *cell = [tableView dequeueReusableCellWithIdentifier: @"settingsMenuTableCell" forIndexPath:indexPath];
+    int rowHeight = self.view.bounds.size.height/10.0f;
+    CGFloat tableWidth = self.view.bounds.size.width*(14.0f/16.0f);
+    //Grab width and height of table.
+    SettingsMenuTableCell *cell = [[SettingsMenuTableCell alloc] init];
+    //Add the imageView to the table.
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,tableWidth*0.15,rowHeight)];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    imageView.image = [UIImage imageNamed:[dictionary objectForKey:@"ImageName"]];
+    cell.image = imageView;
+    [cell addSubview:imageView];
+    
+    //Add the label to the the table.
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(tableWidth*0.2, 0, tableWidth*0.8, rowHeight)];
+    cell.label = label;
     cell.label.text = [dictionary objectForKey:@"Title"];
+    cell.label.textColor = [UIColor whiteColor];
+    [cell addSubview:label];
+    
+    //Configure global settings.
+    cell.backgroundColor = [UIColor darkGrayColor];
     return cell;
 }
 /*----Menu Gesture Actions-----*/

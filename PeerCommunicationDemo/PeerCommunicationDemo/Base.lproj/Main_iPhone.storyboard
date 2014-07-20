@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="z4W-WW-5Au">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="z4W-WW-5Au">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -31,9 +31,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRk-Il-ufL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRk-Il-ufL">
                                 <rect key="frame" x="137" y="125" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nTe-lV-Gfu"/>
+                                    <constraint firstAttribute="width" constant="46" id="ouX-aH-Q3F"/>
+                                </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,16 +45,19 @@
                                     <segue destination="SqO-Yr-bAy" kind="push" id="9Di-b4-Aah"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfv-M3-CzO" userLabel="GestureView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfv-M3-CzO" userLabel="GestureView">
                                 <rect key="frame" x="0.0" y="468" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="hBn-P0-Q6B"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="DFd-dn-hUh" appends="YES" id="Ye9-j1-QFa"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6qn-MF-gGq" userLabel="ShadedView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qn-MF-gGq" userLabel="ShadedView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -61,6 +68,17 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6qn-MF-gGq" secondAttribute="trailing" id="IGv-xO-Cqu"/>
+                            <constraint firstItem="6qn-MF-gGq" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="QQl-La-Vbg"/>
+                            <constraint firstItem="99V-z0-eg5" firstAttribute="top" secondItem="6qn-MF-gGq" secondAttribute="bottom" id="ULa-9r-iQR"/>
+                            <constraint firstAttribute="centerX" secondItem="dRk-Il-ufL" secondAttribute="centerX" id="bRC-FA-b1h"/>
+                            <constraint firstItem="cfv-M3-CzO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gpC-cw-Rrg"/>
+                            <constraint firstItem="6qn-MF-gGq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="jxx-7x-GI6"/>
+                            <constraint firstAttribute="trailing" secondItem="cfv-M3-CzO" secondAttribute="trailing" id="m6z-Ir-k6A"/>
+                            <constraint firstItem="99V-z0-eg5" firstAttribute="top" secondItem="cfv-M3-CzO" secondAttribute="bottom" id="uOC-JV-l66"/>
+                            <constraint firstItem="dRk-Il-ufL" firstAttribute="top" secondItem="jFN-gw-VQI" secondAttribute="bottom" constant="61" id="wGU-f7-9FH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cC0-8y-2w6"/>
                     <connections>

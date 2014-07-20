@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsMenuTableCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *image;
-@property (strong, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) UIImageView *image;
+@property (strong, nonatomic) UILabel *label;
 
 @end

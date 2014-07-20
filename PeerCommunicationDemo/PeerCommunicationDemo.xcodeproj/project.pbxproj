@@ -231,7 +231,7 @@
 				ORGANIZATIONNAME = "iD Tech";
 				TargetAttributes = {
 					E6484E6E1978D83500A7968C = {
-						DevelopmentTeam = Q9LBV5F4K7;
+						DevelopmentTeam = 72VK4VJJFA;
 					};
 					E6484E921978D83500A7968C = {
 						TestTargetID = E6484E6E1978D83500A7968C;
