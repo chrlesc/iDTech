@@ -23,6 +23,13 @@
     _shadedView.hidden = YES;
     settingsArray = [Global getSettingsArray];
     [settingsArray addObject:@{@"Title" : @"Settings",@"ImageName" : @"Settings"}];
+    [_swipeUp setDelegate:self];
+    manager = [Global getConnectionManager];
+    messageArray = [Global getMessageArray];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
+                                               object:nil];
     
 }
 - (void) viewWillLayoutSubviews {
@@ -117,5 +124,33 @@
     _shadedView.hidden = YES;
     _shadedView.backgroundColor = [UIColor clearColor];
     _settingsTable.hidden = YES;
+}
+-(void)sendMessage{
+    NSData *dataToSend = [_messageEntered.text dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *allPeers = manager.session.connectedPeers;
+    NSError *error;
+    
+    [manager.session sendData:dataToSend
+                                     toPeers:allPeers
+                                    withMode:MCSessionSendDataReliable
+                                       error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    
+    [messageArray addObject:[NSString stringWithFormat:@"I wrote:\n%@\n\n", _messageEntered.text]];
+    [_messageEntered setText:@""];
+    [_messageEntered resignFirstResponder];
+}
+
+-(void)didReceiveDataWithNotification:(NSNotification *)notification{
+    MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+    NSString *peerDisplayName = peerID.displayName;
+    
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    
+    [_tvChat performSelectorOnMainThread:@selector(setText:) withObject:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"%@ wrote:\n%@\n\n", peerDisplayName, receivedText]] waitUntilDone:NO];
 }
 @end

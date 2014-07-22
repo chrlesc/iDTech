@@ -15,4 +15,5 @@
 +(NSMutableArray *)getSettingsArray;
 +(void)setConnectionsVC:(ConnectionsViewController *)vc;
 +(ConnectionsViewController *)getConnectionsVC;
++(NSMutableArray *)getMessageArray;
 @end

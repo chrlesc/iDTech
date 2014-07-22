@@ -28,6 +28,7 @@
 		E6484EB11978DF8D00A7968C /* SettingsMenuTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6484EB01978DF8D00A7968C /* SettingsMenuTableCell.m */; };
 		E6484EB419793F2200A7968C /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6484EB319793F2200A7968C /* ConnectionsViewController.m */; };
 		E6484EB71979405300A7968C /* DeviceListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6484EB61979405300A7968C /* DeviceListTableCell.m */; };
+		E6484EBA197E76F500A7968C /* MessageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6484EB9197E76F500A7968C /* MessageTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		E6484EB319793F2200A7968C /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsViewController.m; sourceTree = "<group>"; };
 		E6484EB51979405300A7968C /* DeviceListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceListTableCell.h; sourceTree = "<group>"; };
 		E6484EB61979405300A7968C /* DeviceListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceListTableCell.m; sourceTree = "<group>"; };
+		E6484EB8197E76F500A7968C /* MessageTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableCell.h; sourceTree = "<group>"; };
+		E6484EB9197E76F500A7968C /* MessageTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 				E6484E811978D83500A7968C /* AppDelegate.h */,
 				E6484E821978D83500A7968C /* AppDelegate.m */,
 				E6484E841978D83500A7968C /* Main_iPhone.storyboard */,
+				E6484EB8197E76F500A7968C /* MessageTableCell.h */,
+				E6484EB9197E76F500A7968C /* MessageTableCell.m */,
 				E6484EB51979405300A7968C /* DeviceListTableCell.h */,
 				E6484EB61979405300A7968C /* DeviceListTableCell.m */,
 				A20ED1471979499B00E04831 /* ConnectionManager.h */,
@@ -289,6 +294,7 @@
 				E6484EB11978DF8D00A7968C /* SettingsMenuTableCell.m in Sources */,
 				E6484E8C1978D83500A7968C /* ViewController.m in Sources */,
 				E6484E831978D83500A7968C /* AppDelegate.m in Sources */,
+				E6484EBA197E76F500A7968C /* MessageTableCell.m in Sources */,
 				A20ED14C19794C0600E04831 /* Global.m in Sources */,
 				E6484EB71979405300A7968C /* DeviceListTableCell.m in Sources */,
 				A20ED1491979499B00E04831 /* ConnectionManager.m in Sources */,

@@ -11,6 +11,7 @@
 @implementation Global
 static ConnectionManager *manager;
 static NSMutableArray *settingsArray;
+static NSMutableArray *messageArray;
 static ConnectionsViewController *connectionVC;
 +(ConnectionManager *)getConnectionManager{
     if(manager == nil){
@@ -23,6 +24,12 @@ static ConnectionsViewController *connectionVC;
         settingsArray = [[NSMutableArray alloc] init];
     }
     return settingsArray;
+}
++(NSMutableArray *)getMessageArray{
+    if(messageArray == nil){
+        messageArray = [[NSMutableArray alloc] init];
+    }
+    return messageArray;
 }
 +(ConnectionsViewController *)getConnectionsVC{
     return connectionVC;
